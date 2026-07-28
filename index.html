@@ -3,36 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#041812">
+<meta name="theme-color" content="#031a14">
 <title>Bhavini & Tanveer | Wedding Invitation</title>
-<meta name="description" content="Wedding invitation of Bhavini and Tanveer">
+<meta name="description" content="Wedding invitation for Bhavini and Tanveer">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=700">
+<link rel="stylesheet" href="style.css?v=900">
 </head>
-<body class="locked">
-<div id="petals" class="petals" aria-hidden="true"></div>
-<div id="dust" class="dust" aria-hidden="true"></div>
-
-<section id="gate" class="gate">
-  <div class="gate-door left-door"></div>
-  <div class="gate-door right-door"></div>
-  <div class="gate-beam"></div>
-  <div class="gate-card">
-    <img src="assets/ganesha.svg" alt="Lord Ganesha" class="gate-ganesha">
-    <p>॥ Shree Ganeshaya Namah ॥</p>
-    <small>Together with their families</small>
-    <h1>Bhavini</h1>
-    <div class="name-divider"><span></span><b>&amp;</b><span></span></div>
-    <h1>Tanveer</h1>
-    <p class="invite-line">invite you to celebrate their wedding</p>
-    <button id="openGate">Open Invitation</button>
-  </div>
-</section>
+<body>
+<div id="petals" class="particles"></div>
+<div id="dust" class="particles"></div>
 
 <header>
-  <a href="#home" class="brand"><b>B</b><span>&amp;</span><b>T</b></a>
+  <a class="brand" href="#home"><b>B</b><span>&amp;</span><b>T</b></a>
   <button class="menu" id="menuBtn" aria-label="Open menu"><i></i><i></i></button>
   <nav id="nav">
     <a href="#home">Home</a>
@@ -45,96 +29,97 @@
 
 <main>
 <section id="home" class="hero">
-  <div class="hero-shade"></div>
-  <img src="assets/lantern.svg" class="lantern l1" alt="">
-  <img src="assets/lantern.svg" class="lantern l2" alt="">
-  <img src="assets/lantern.svg" class="lantern l3" alt="">
-  <img src="assets/lantern.svg" class="lantern l4" alt="">
+  <div class="hero-overlay"></div>
+  <img src="assets/lantern.svg" class="lantern hl1" alt="">
+  <img src="assets/lantern.svg" class="lantern hl2" alt="">
+  <img src="assets/lantern.svg" class="lantern hr1" alt="">
+  <img src="assets/lantern.svg" class="lantern hr2" alt="">
   <div class="hero-copy">
-    <img src="assets/ganesha.svg" alt="Lord Ganesha" class="hero-ganesha">
-    <p class="ganesh-text">॥ Shree Ganeshaya Namah ॥</p>
-    <p class="tiny">Together with their families</p>
-    <h2>Bhavini</h2>
-    <div class="name-divider"><span></span><b>&amp;</b><span></span></div>
-    <h2>Tanveer</h2>
-    <p class="tiny">invite you to celebrate their wedding</p>
-    <a href="#invitation" class="gold-btn">Open Invitation</a>
+    <img src="assets/ganesha.svg" class="ganesha" alt="Lord Ganesha">
+    <p class="ganesh-line">॥ Shree Ganeshaya Namah ॥</p>
+    <p class="smallcaps">Together with their families</p>
+    <h1>Bhavini</h1>
+    <div class="name-rule"><span></span><b>&amp;</b><span></span></div>
+    <h1>Tanveer</h1>
+    <p class="smallcaps">invite you to celebrate their wedding</p>
+    <a class="primary" href="#invitation">Open Invitation</a>
   </div>
   <div class="hero-quote">
     <span></span>
     <p>Two hearts<br>One promise<br>A lifetime of togetherness</p>
     <span></span>
   </div>
-  <a href="#invitation" class="down">⌄</a>
+  <a class="down" href="#invitation">⌄</a>
 </section>
 
 <section id="invitation" class="scroll-section">
-  <img src="assets/lantern.svg" class="side-lantern sl1" alt="">
-  <img src="assets/lantern.svg" class="side-lantern sl2" alt="">
-  <div class="scroll-stage">
-    <button id="scrollToggle" class="scroll-toggle" aria-expanded="false">
-      <span class="tap-icon">☝</span>
-      <span id="scrollLabel">Tap the scroll to open</span>
+  <img src="assets/lantern.svg" class="side-lantern sl" alt="">
+  <img src="assets/lantern.svg" class="side-lantern sr" alt="">
+  <div id="scrollWindow" class="scroll-window">
+    <button id="scrollButton" class="scroll-prompt" aria-expanded="false">
+      <span>☝</span><span id="scrollPromptText">Tap the scroll to open</span>
     </button>
     <button id="scrollClose" class="scroll-close" aria-label="Close invitation">×</button>
-    <div id="scroll" class="scroll-card">
-      <div class="rod rod-top"></div>
+    <div class="scroll-shell">
+      <div class="rod top-rod"></div>
       <div class="paper">
-        <div class="paper-inner">
-          <p class="scroll-kicker">You Are Cordially Invited</p>
+        <div class="paper-content">
+          <p class="scroll-heading">You Are Cordially Invited</p>
           <p>With the blessings of</p>
           <h3>Late Sh. K.D. Sharma &amp; Smt. Chanchal Sharma</h3>
-          <div class="rule">◆</div>
+          <div class="divider">◆</div>
           <p><strong>Sh. Ajay Gautam &amp; Smt. Poonam Sharma</strong><br>
           solicit the honour of your gracious presence<br>
           at the wedding celebration of their beloved daughter</p>
-          <div class="scroll-names">
-            <strong>Bhavini</strong><small>with</small><strong>Tanveer</strong>
+          <div class="couple">
+            <strong>Bhavini</strong>
+            <small>with</small>
+            <strong>Tanveer</strong>
           </div>
-          <p class="groom-line">Sd. Maninder Singh &amp; Sdn. Kamalpreet Kaur</p>
+          <p class="groom-parent">Sd. Maninder Singh &amp; Sdn. Kamalpreet Kaur</p>
         </div>
       </div>
-      <div class="rod rod-bottom"></div>
+      <div class="rod bottom-rod"></div>
     </div>
   </div>
 </section>
 
 <section id="events" class="events">
   <div class="section-title"><span></span><h2>Celebrate With Us</h2><span></span></div>
-  <div class="cards">
+  <div class="event-grid">
     <article class="event-card">
-      <img src="assets/lantern.svg" class="card-lantern cl1" alt="">
-      <img src="assets/lantern.svg" class="card-lantern cl2" alt="">
-      <img src="assets/corner.svg" class="corner c1" alt="">
-      <img src="assets/corner.svg" class="corner c2" alt="">
+      <img src="assets/corner.svg" class="corner tl" alt="">
+      <img src="assets/corner.svg" class="corner br" alt="">
+      <img src="assets/lantern.svg" class="card-lantern left" alt="">
+      <img src="assets/lantern.svg" class="card-lantern right" alt="">
       <h3>Reception of Baraat</h3>
       <p class="weekday">Saturday</p>
       <strong class="date">15</strong>
       <p class="month">August 2026</p>
       <div class="dotted"></div>
       <p class="time">7:30 PM onwards</p>
-      <p class="place">Club Cabbana<br>Jalandhar–Phagwara Highway</p>
-      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Club+Cabbana+Jalandhar+Phagwara+Highway">View Map ⌖</a>
+      <p class="venue">Club Cabbana<br>Jalandhar–Phagwara Highway</p>
+      <a class="map-button" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Club+Cabbana+Jalandhar+Phagwara+Highway">View Map ⌖</a>
     </article>
     <article class="event-card">
-      <img src="assets/lantern.svg" class="card-lantern cl1" alt="">
-      <img src="assets/lantern.svg" class="card-lantern cl2" alt="">
-      <img src="assets/corner.svg" class="corner c1" alt="">
-      <img src="assets/corner.svg" class="corner c2" alt="">
+      <img src="assets/corner.svg" class="corner tl" alt="">
+      <img src="assets/corner.svg" class="corner br" alt="">
+      <img src="assets/lantern.svg" class="card-lantern left" alt="">
+      <img src="assets/lantern.svg" class="card-lantern right" alt="">
       <h3>Anand Karaj</h3>
       <p class="weekday">Sunday</p>
       <strong class="date">16</strong>
       <p class="month">August 2026</p>
       <div class="dotted"></div>
       <p class="time">11:00 AM</p>
-      <p class="place">Gurudwara Bhai Ghaniya Ji Sewa Simran Kendar<br>Chahal Nagar, Phagwara</p>
-      <a class="map-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gurudwara+Bhai+Ghaniya+Ji+Sewa+Simran+Kendar+Chahal+Nagar+Phagwara">View Map ⌖</a>
+      <p class="venue">Gurudwara Bhai Ghaniya Ji Sewa Simran Kendar<br>Chahal Nagar, Phagwara</p>
+      <a class="map-button" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gurudwara+Bhai+Ghaniya+Ji+Sewa+Simran+Kendar+Chahal+Nagar+Phagwara">View Map ⌖</a>
     </article>
   </div>
 </section>
 
 <section id="countdown" class="countdown-section">
-  <div class="count-shade"></div>
+  <div class="count-overlay"></div>
   <div class="section-title"><span></span><h2>Countdown To Our Big Day</h2><span></span></div>
   <div class="countdown">
     <div><strong id="days">00</strong><span>Days</span></div>
@@ -145,7 +130,7 @@
 </section>
 
 <section id="contact" class="finale">
-  <div class="finale-frame"></div>
+  <div class="final-frame"></div>
   <p>We look forward to celebrating with you</p>
   <h2>Gautam Family</h2>
   <div class="contact-boxes">
@@ -156,10 +141,10 @@
 </main>
 
 <div class="music">
-  <button id="musicBtn" aria-label="Play or pause music">♪</button>
-  <div><strong>Background Music</strong><span id="musicText">Tap to play</span></div>
+  <button id="musicButton" aria-label="Play or pause music">♪</button>
+  <div><strong>Background Music</strong><span id="musicStatus">Tap to play</span></div>
 </div>
-<audio id="music" loop preload="auto"><source src="assets/music.wav?v=700" type="audio/wav"></audio>
-<script src="script.js?v=700"></script>
+<audio id="music" loop preload="auto"><source src="assets/music.wav?v=900" type="audio/wav"></audio>
+<script src="script.js?v=900"></script>
 </body>
 </html>

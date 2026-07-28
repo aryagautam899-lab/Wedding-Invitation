@@ -1,27 +1,36 @@
 document.addEventListener("DOMContentLoaded",()=>{
-  const gate=document.getElementById("gate"),openGate=document.getElementById("openGate");
-  const music=document.getElementById("music"),musicBtn=document.getElementById("musicBtn"),musicText=document.getElementById("musicText");
-  const scrollStage=document.querySelector(".scroll-stage"),scrollToggle=document.getElementById("scrollToggle"),scrollClose=document.getElementById("scrollClose"),scrollLabel=document.getElementById("scrollLabel");
-  const menuBtn=document.getElementById("menuBtn"),nav=document.getElementById("nav");
+  const scrollWindow=document.getElementById("scrollWindow");
+  const scrollButton=document.getElementById("scrollButton");
+  const scrollClose=document.getElementById("scrollClose");
+  const promptText=document.getElementById("scrollPromptText");
+  const music=document.getElementById("music");
+  const musicButton=document.getElementById("musicButton");
+  const musicStatus=document.getElementById("musicStatus");
+  const menuBtn=document.getElementById("menuBtn");
+  const nav=document.getElementById("nav");
 
-  openGate.addEventListener("click",async()=>{
-    gate.classList.add("open");
-    document.body.classList.remove("locked");
-    try{await music.play();musicBtn.textContent="Ⅱ";musicText.textContent="Playing"}catch{}
-    setTimeout(()=>gate.classList.add("done"),1300);
-  });
-
-  function setScroll(open){
-    scrollStage.classList.toggle("open",open);
-    scrollToggle.setAttribute("aria-expanded",String(open));
-    scrollLabel.textContent=open?"Tap to roll the scroll closed":"Tap the scroll to open";
+  function openScroll(){
+    scrollWindow.classList.remove("closing");
+    scrollWindow.classList.add("open");
+    scrollButton.setAttribute("aria-expanded","true");
+    promptText.textContent="Tap to roll the scroll closed";
   }
-  scrollToggle.addEventListener("click",()=>setScroll(!scrollStage.classList.contains("open")));
-  scrollClose.addEventListener("click",()=>setScroll(false));
+  function closeScroll(){
+    scrollWindow.classList.add("closing");
+    scrollWindow.classList.remove("open");
+    scrollButton.setAttribute("aria-expanded","false");
+    promptText.textContent="Tap the scroll to open";
+    setTimeout(()=>scrollWindow.classList.remove("closing"),950);
+  }
+  scrollButton.addEventListener("click",()=>scrollWindow.classList.contains("open")?closeScroll():openScroll());
+  scrollClose.addEventListener("click",closeScroll);
 
-  musicBtn.addEventListener("click",async()=>{
-    if(music.paused){try{await music.play();musicBtn.textContent="Ⅱ";musicText.textContent="Playing"}catch{}}
-    else{music.pause();musicBtn.textContent="♪";musicText.textContent="Paused"}
+  musicButton.addEventListener("click",async()=>{
+    if(music.paused){
+      try{await music.play();musicButton.textContent="Ⅱ";musicStatus.textContent="Playing"}catch{}
+    }else{
+      music.pause();musicButton.textContent="♪";musicStatus.textContent="Paused";
+    }
   });
 
   menuBtn.addEventListener("click",()=>nav.classList.toggle("open"));
@@ -31,20 +40,21 @@ document.addEventListener("DOMContentLoaded",()=>{
   function tick(){
     let d=target-Date.now(); if(d<0)d=0;
     const vals={days:Math.floor(d/86400000),hours:Math.floor((d%86400000)/3600000),minutes:Math.floor((d%3600000)/60000),seconds:Math.floor((d%60000)/1000)};
-    for(const [id,v] of Object.entries(vals))document.getElementById(id).textContent=String(v).padStart(2,"0");
+    Object.entries(vals).forEach(([id,v])=>document.getElementById(id).textContent=String(v).padStart(2,"0"));
   }
   tick();setInterval(tick,1000);
 
-  function petal(){
+  function addPetal(){
     if(document.hidden||document.querySelectorAll(".petal").length>22)return;
     const p=document.createElement("span");p.className="petal";
     p.style.left=Math.random()*100+"vw";p.style.setProperty("--drift",(Math.random()-.5)*280+"px");
     p.style.animationDuration=7+Math.random()*6+"s";document.getElementById("petals").appendChild(p);
     setTimeout(()=>p.remove(),14000);
   }
-  function spark(){
+  function addSpark(){
     if(document.hidden||document.querySelectorAll(".spark").length>22)return;
-    const s=document.createElement("span");s.className="spark";s.style.left=Math.random()*100+"vw";s.style.animationDuration=5+Math.random()*5+"s";document.getElementById("dust").appendChild(s);setTimeout(()=>s.remove(),11000);
+    const s=document.createElement("span");s.className="spark";s.style.left=Math.random()*100+"vw";
+    s.style.animationDuration=5+Math.random()*5+"s";document.getElementById("dust").appendChild(s);setTimeout(()=>s.remove(),11000);
   }
-  setInterval(petal,650);setInterval(spark,620);
+  setInterval(addPetal,650);setInterval(addSpark,620);
 });
