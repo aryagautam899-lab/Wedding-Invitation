@@ -1,17 +1,27 @@
-# Bhavini & Tanveer — Wide Palace Corrected
+# Bhavini & Tanveer — Final Gold Statue Version
 
-Built from the actual GitHub repository ZIP.
+Built from the actual GitHub repository project.
 
-Fixes:
-- replaced the blurred-side palace with a true widescreen palace
-- removed the dark/frosted block on the right
-- made the left invitation card more transparent
-- preserved split opening, invitation scroll, events, countdown, music and responsive layout
-- final changes are isolated in `final-hero-fix-1200.css`
+Final approved hero:
+- clean wide golden palace
+- gold statue Ganesha
+- no text on the right side
+- transparent left invitation panel
+- no dark or frosted right-side block
+
+Preserved:
+- split-door opening
+- rolling invitation scroll
+- groom's parents line
+- both event cards and map buttons
+- countdown
+- music
+- petals and gold particles
+- responsive layouts
 
 Deployment:
-1. Delete the existing repository files.
+1. Delete/replace the old repository contents.
 2. Upload everything from this package.
-3. Keep the entire `assets` folder.
-4. Confirm `final-hero-fix-1200.css` is in the repository root.
-5. Open the deployed site once with `?v=1200`.
+3. Keep the full assets folder.
+4. Confirm `final-gold-statue-1300.css` is in the repository root.
+5. Open the deployed website once with `?v=1300`.
