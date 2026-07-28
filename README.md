@@ -1,32 +1,18 @@
-# Ultimate Emerald Royal Wedding Website
+# Final Optimized Emerald Royal Wedding Website
 
-This version includes:
+Changes in this build:
 
-- Only 15 and 16 August events
-- No RSVP or attendance form
-- Cinematic palace-door entrance
-- Emerald velvet and gold-foil styling
-- Animated handwritten names
-- Royal scroll invitation with wax seal
-- Flip-style countdown animation
-- Premium venue cards with attire, arrival and parking notes
-- Natural floating petals and gold sparkles
-- Cinematic blur, scale and fade transitions
-- Premium compact music player
-- Floating blessing message
-- Day-to-night ambient lighting
-- Gold hover and shimmer effects
-- Celebration finale
-- Full responsive support for mobile, tablet, laptop and desktop
-- No picture/gallery section
+- Optimized for smoother performance on PC, mobile and tablet
+- Heavy sparkles, cursor glow, fixed backgrounds and blur effects removed
+- Petal count and frequency reduced
+- Only 15 and 16 August events included
+- 13 August Kirtan removed
+- Couple names made permanently visible and protected from top cropping
+- Bhavini, “with”, and Tanveer displayed on separate lines
+- Bride’s and groom’s parents clearly labelled and bolded
+- Venue detail badges removed
+- RSVP/WhatsApp destination updated to +91 79737 27248
+- Mobile, tablet, laptop and desktop layouts retained
 
-## Upload
-
-Extract the ZIP and upload all files to the root of the existing GitHub repository.
-Allow GitHub to replace the current files, then commit. GitHub Pages will redeploy automatically.
-
-## Add music
-
-Place your chosen MP3 at:
-
-`assets/music.mp3`
+Upload all files to the root of the existing GitHub repository and replace the old files.
+GitHub Pages will redeploy automatically.

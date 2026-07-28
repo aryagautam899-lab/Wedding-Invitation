@@ -89,16 +89,18 @@ const revealObserver = new IntersectionObserver(entries => {
 document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
 function createPetal() {
+  const layer = document.getElementById("petalLayer");
+  if (!layer || layer.childElementCount >= 12 || document.hidden) return;
   const petal = document.createElement("span");
   petal.className = "petal";
   petal.style.left = `${Math.random() * 100}vw`;
   petal.style.animationDuration = `${8 + Math.random() * 7}s`;
   petal.style.transform = `scale(${0.55 + Math.random() * 0.9})`;
   petal.style.setProperty("--drift", `${(Math.random() - 0.5) * 220}px`);
-  document.getElementById("petalLayer").appendChild(petal);
+  layer.appendChild(petal);
   setTimeout(() => petal.remove(), 16000);
 }
-setInterval(createPetal, 850);
+setInterval(createPetal, 1800);
 
 const cursorGlow = document.getElementById("cursorGlow");
 window.addEventListener("pointermove", event => {
@@ -124,7 +126,7 @@ Number of guests: ${guests}
 Event(s): ${eventChoice}
 Message: ${message || "No additional message"}`;
 
-  const whatsappNumber = "917986503806";
+  const whatsappNumber = "917973727248";
   window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
 });
 
@@ -209,20 +211,10 @@ function createSparkle(intense = false) {
   setTimeout(() => sparkle.remove(), 10000);
   if (intense && Math.random() > .45) setTimeout(() => createSparkle(false), 100);
 }
-setInterval(() => createSparkle(false), 900);
+// Sparkles disabled for performance.
 
 const finale = document.getElementById("finale");
-let finaleTriggered = false;
-if (finale) {
-  const finaleObserver = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting && !finaleTriggered) {
-      finaleTriggered = true;
-      for (let i = 0; i < 32; i++) setTimeout(() => createSparkle(true), i * 75);
-      for (let i = 0; i < 18; i++) setTimeout(createPetal, i * 120);
-    }
-  }, { threshold: .35 });
-  finaleObserver.observe(finale);
-}
+// Heavy finale particle burst removed for smoother performance.
 
 // Improve petal variety
 const originalCreatePetal = createPetal;
@@ -234,6 +226,6 @@ createPetal = function() {
   petal.style.setProperty("--drift", `${(Math.random() - .5) * 260}px`);
   petal.style.setProperty("--scale", `${.45 + Math.random() * 1.15}`);
   petal.style.opacity = `${.18 + Math.random() * .55}`;
-  document.getElementById("petalLayer").appendChild(petal);
+  layer.appendChild(petal);
   setTimeout(() => petal.remove(), 17000);
 };
