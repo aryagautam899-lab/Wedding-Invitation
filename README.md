@@ -1,18 +1,14 @@
-# Cinematic Emerald Wedding Invitation
+# Split-Door Final Wedding Invitation
 
-This package includes:
+This version preserves the split-door opening animation and adds:
 
-- Stylish opening screen
-- Elegant emerald, ivory and antique-gold design
-- Architectural invitation card created in HTML/CSS
-- Groom’s parents shown below Tanveer’s name
-- Stable Reception and Laavaan cards
-- Only 15 and 16 August events
-- No RSVP or attendance form
-- Countdown
-- Contact numbers
-- Original background instrumental
-- Responsive layouts for phone, tablet and desktop
-- Minimal JavaScript for smooth performance
+- Invitation rising gently after the doors open
+- Refined digital invitation card
+- Groom’s parents shown only as names below Tanveer
+- “Anand Karaj” instead of “Laavaan Phere”
+- Stable event-card typography
+- First contact number: 7986503806
+- No RSVP or attendance section
+- Responsive layout for mobile, tablet and desktop
 
-Upload all files and the assets folder to the root of the GitHub repository and replace the current files.
+Upload every file and the assets folder over the existing repository files, then commit.

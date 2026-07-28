@@ -1,59 +1,108 @@
-const opening=document.getElementById("opening");
-const enterBtn=document.getElementById("enterBtn");
-const music=document.getElementById("music");
-const musicButton=document.getElementById("musicButton");
-const musicState=document.getElementById("musicState");
-const menuButton=document.getElementById("menuButton");
-const nav=document.getElementById("nav");
+const body = document.body;
+const gate = document.getElementById("royalGate");
+const openButton = document.getElementById("openInvitation");
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicToggle");
+const musicPlayer = document.getElementById("musicPlayer");
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.getElementById("navMenu");
+const scrollButton = document.getElementById("openScroll");
+const invitationScroll = document.getElementById("invitationScroll");
 
-enterBtn.addEventListener("click",async()=>{
-  opening.classList.add("hide");
-  document.body.classList.remove("locked");
-  try{
-    await music.play();
-    musicButton.textContent="Ⅱ";
-    musicState.textContent="Playing";
-  }catch{
-    musicState.textContent="Tap to play";
-  }
-});
+if (openButton && gate) {
+  openButton.addEventListener("click", async () => {
+    gate.classList.add("opened");
+    body.classList.remove("is-locked");
 
-musicButton.addEventListener("click",async()=>{
-  if(music.paused){
-    try{
-      await music.play();
-      musicButton.textContent="Ⅱ";
-      musicState.textContent="Playing";
-    }catch{
-      musicState.textContent="Tap again";
+    try {
+      if (music) {
+        await music.play();
+        musicButton?.classList.add("is-playing");
+        musicPlayer?.classList.add("playing");
+        const icon = musicButton?.querySelector(".music-icon");
+        if (icon) icon.textContent = "♫";
+      }
+    } catch {
+      // Music can still be started manually.
     }
-  }else{
-    music.pause();
-    musicButton.textContent="♪";
-    musicState.textContent="Paused";
+
+    setTimeout(() => gate.remove(), 450);
+  });
+}
+
+if (musicButton && music) {
+  musicButton.addEventListener("click", async () => {
+    if (music.paused) {
+      try {
+        await music.play();
+        musicButton.classList.add("is-playing");
+        musicPlayer?.classList.add("playing");
+        const icon = musicButton.querySelector(".music-icon");
+        if (icon) icon.textContent = "♫";
+      } catch {
+        alert("The browser blocked audio. Tap the music button once more.");
+      }
+    } else {
+      music.pause();
+      musicButton.classList.remove("is-playing");
+      musicPlayer?.classList.remove("playing");
+      const icon = musicButton.querySelector(".music-icon");
+      if (icon) icon.textContent = "♪";
+    }
+  });
+}
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    const open = navMenu.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(open));
+  });
+
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+if (scrollButton && invitationScroll) {
+  scrollButton.addEventListener("click", () => {
+    const open = invitationScroll.classList.toggle("open");
+    scrollButton.textContent = open ? "Close the Invitation" : "Read the Invitation";
+  });
+}
+
+const target = new Date("2026-08-15T19:30:00+05:30").getTime();
+
+function updateCountdown() {
+  const countdown = document.getElementById("countdown");
+  if (!countdown) return;
+
+  const remaining = target - Date.now();
+
+  if (remaining <= 0) {
+    countdown.innerHTML =
+      '<div class="count-box" style="min-width:min(90vw,620px)"><strong>Welcome</strong><span>It is celebration time</span></div>';
+    return;
   }
-});
 
-menuButton.addEventListener("click",()=>{
-  const open=nav.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded",String(open));
-});
-nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
-
-const target=new Date("2026-08-15T19:30:00+05:30").getTime();
-function tick(){
-  const d=target-Date.now();
-  if(d<=0)return;
-  const vals={
-    days:Math.floor(d/86400000),
-    hours:Math.floor((d%86400000)/3600000),
-    minutes:Math.floor((d%3600000)/60000),
-    seconds:Math.floor((d%60000)/1000)
+  const values = {
+    days: Math.floor(remaining / 86400000),
+    hours: Math.floor((remaining % 86400000) / 3600000),
+    minutes: Math.floor((remaining % 3600000) / 60000),
+    seconds: Math.floor((remaining % 60000) / 1000)
   };
-  for(const [id,val] of Object.entries(vals)){
-    const el=document.getElementById(id);
-    if(el)el.textContent=String(val).padStart(2,"0");
+
+  for (const [id, value] of Object.entries(values)) {
+    const element = document.getElementById(id);
+    if (element) element.textContent = String(value).padStart(2, "0");
   }
 }
-tick();
-setInterval(tick,1000);
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+document.querySelectorAll(".reveal").forEach(element => {
+  element.classList.add("visible");
+});
