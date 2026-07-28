@@ -1,15 +1,14 @@
-# Actually Fixed Version
+# Stylish Wedding Invitation Website
 
-The previous package had mismatched HTML class names and a broken JavaScript file, which caused the opening screen to collapse and the site to stop responding.
+This version fixes the issues shown in your screenshots:
 
-This version fixes:
-- Opening screen full-screen layout
-- Correct CSS class names
-- Working Open Invitation button
-- Working navigation
-- Working countdown
-- Working invitation button
-- Correct WAV audio type
-- Browser cache-busting with versioned file URLs
+- A more decorative first page
+- A proper two-column Reception card that no longer breaks into one letter per line
+- A digital invitation card created with HTML and CSS, inspired by the reference image rather than using the image itself
+- Only 15 and 16 August events
+- No RSVP or attendance feature
+- Updated first phone number: 7986503806
+- Working background music
+- Responsive layouts for mobile, tablet and desktop
 
-Upload every file and the assets folder over the existing GitHub repository files, then commit.
+Upload all files and the assets folder to the root of your GitHub repository and replace the existing files.
