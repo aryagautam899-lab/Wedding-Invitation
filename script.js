@@ -108,27 +108,7 @@ window.addEventListener("pointermove", event => {
   cursorGlow.style.top = `${event.clientY}px`;
 });
 
-document.getElementById("rsvpForm").addEventListener("submit", event => {
-  event.preventDefault();
 
-  const name = document.getElementById("guestName").value.trim();
-  const guests = document.getElementById("guestCount").value;
-  const attendance = document.getElementById("attendance").value;
-  const eventChoice = document.getElementById("eventChoice").value;
-  const message = document.getElementById("guestMessage").value.trim();
-
-  const text =
-`Wedding RSVP — Bhavini & Tanveer
-
-Guest: ${name}
-Response: ${attendance}
-Number of guests: ${guests}
-Event(s): ${eventChoice}
-Message: ${message || "No additional message"}`;
-
-  const whatsappNumber = "917973727248";
-  window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
-});
 
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");

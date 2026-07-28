@@ -1,18 +1,16 @@
-# Final Optimized Emerald Royal Wedding Website
+# Floral Royal Events — No RSVP
 
-Changes in this build:
+Updates in this version:
 
-- Optimized for smoother performance on PC, mobile and tablet
-- Heavy sparkles, cursor glow, fixed backgrounds and blur effects removed
-- Petal count and frequency reduced
-- Only 15 and 16 August events included
-- 13 August Kirtan removed
-- Couple names made permanently visible and protected from top cropping
-- Bhavini, “with”, and Tanveer displayed on separate lines
-- Bride’s and groom’s parents clearly labelled and bolded
-- Venue detail badges removed
-- RSVP/WhatsApp destination updated to +91 79737 27248
-- Mobile, tablet, laptop and desktop layouts retained
+- RSVP and attendance features completely removed
+- RSVP navigation link removed
+- RSVP JavaScript removed
+- Event cards redesigned with floral corner ornaments
+- Reception and Laavaan venue sections made more premium
+- Date panels restyled with royal borders and depth
+- Map buttons redesigned as premium pill-shaped controls
+- Responsive layout retained for phones, tablets, laptops and desktops
+- Only 15 and 16 August events remain
 
-Upload all files to the root of the existing GitHub repository and replace the old files.
-GitHub Pages will redeploy automatically.
+Upload all files over the current GitHub repository files and commit the changes.
+GitHub Pages will update automatically.

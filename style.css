@@ -1778,3 +1778,349 @@ body {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* =====================================================
+   FLORAL ROYAL EVENT CARDS + RSVP REMOVAL
+   ===================================================== */
+
+#rsvp,
+.rsvp,
+.rsvp-shell,
+.rsvp-form,
+.rsvp-copy {
+  display: none !important;
+}
+
+/* More luxurious event section */
+.celebrations {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(200,165,88,.10), transparent 24%),
+    radial-gradient(circle at 88% 82%, rgba(11,71,55,.08), transparent 26%),
+    linear-gradient(180deg, #f8f1df, #f4ead5);
+}
+
+.celebrations::before,
+.celebrations::after {
+  content: "❦";
+  position: absolute;
+  color: rgba(141,106,45,.12);
+  font-size: clamp(7rem, 16vw, 15rem);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.celebrations::before {
+  top: 2%;
+  left: -2%;
+  transform: rotate(-22deg);
+}
+
+.celebrations::after {
+  right: -2%;
+  bottom: 2%;
+  transform: rotate(158deg);
+}
+
+.event-timeline,
+.section-intro {
+  position: relative;
+  z-index: 2;
+}
+
+.event-row {
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* Date panel styling */
+.event-date-block {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(141,106,45,.28);
+  background:
+    radial-gradient(circle at center, rgba(200,165,88,.10), transparent 45%),
+    linear-gradient(145deg, #fbf6e9, #eee2c8);
+  box-shadow:
+    0 18px 45px rgba(21,39,31,.08),
+    inset 0 0 0 10px rgba(255,255,255,.32);
+}
+
+.event-date-block::before,
+.event-date-block::after {
+  content: "✦";
+  position: absolute;
+  color: rgba(141,106,45,.46);
+  font-size: .8rem;
+}
+
+.event-date-block::before {
+  top: 16px;
+  left: 18px;
+}
+
+.event-date-block::after {
+  right: 18px;
+  bottom: 16px;
+}
+
+.feature-date {
+  background:
+    radial-gradient(circle at center, rgba(239,221,168,.12), transparent 45%),
+    linear-gradient(145deg, #0b4737, #06271f);
+  box-shadow:
+    0 22px 55px rgba(3,24,18,.20),
+    inset 0 0 0 10px rgba(255,255,255,.025);
+}
+
+/* Floral event card */
+.floral-event-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 58px 56px;
+  border: 1px solid rgba(141,106,45,.26);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(200,165,88,.09), transparent 23%),
+    radial-gradient(circle at 82% 88%, rgba(11,71,55,.07), transparent 24%),
+    #fffaf0;
+  box-shadow:
+    0 24px 65px rgba(21,39,31,.10),
+    inset 0 0 0 12px rgba(255,255,255,.34);
+}
+
+.feature-card.floral-event-card {
+  color: var(--ivory);
+  background:
+    radial-gradient(circle at 15% 14%, rgba(239,221,168,.12), transparent 26%),
+    radial-gradient(circle at 86% 88%, rgba(255,255,255,.035), transparent 22%),
+    linear-gradient(145deg, #0b4737, #06271f);
+  border-color: rgba(221,195,126,.48);
+  box-shadow:
+    0 28px 74px rgba(3,24,18,.23),
+    inset 0 0 0 12px rgba(255,255,255,.018);
+}
+
+.floral-event-card::before {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border: 1px solid rgba(141,106,45,.20);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.feature-card.floral-event-card::before {
+  border-color: rgba(239,221,168,.20);
+}
+
+/* Floral corner ornaments */
+.floral-corner {
+  position: absolute;
+  z-index: 2;
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  color: rgba(141,106,45,.54);
+  font-size: 2rem;
+  line-height: 1;
+  pointer-events: none;
+  text-shadow: 0 4px 18px rgba(141,106,45,.14);
+}
+
+.feature-card .floral-corner {
+  color: rgba(239,221,168,.62);
+}
+
+.floral-corner::before,
+.floral-corner::after {
+  content: "";
+  position: absolute;
+  background: currentColor;
+  opacity: .42;
+}
+
+.floral-corner::before {
+  width: 54px;
+  height: 1px;
+}
+
+.floral-corner::after {
+  width: 1px;
+  height: 54px;
+}
+
+.floral-top-left {
+  top: 18px;
+  left: 18px;
+}
+
+.floral-top-left::before {
+  left: 26px;
+  top: 4px;
+}
+
+.floral-top-left::after {
+  left: 4px;
+  top: 26px;
+}
+
+.floral-top-right {
+  top: 18px;
+  right: 18px;
+  transform: rotate(90deg);
+}
+
+.floral-bottom-left {
+  bottom: 18px;
+  left: 18px;
+  transform: rotate(-90deg);
+}
+
+.floral-bottom-right {
+  right: 18px;
+  bottom: 18px;
+  transform: rotate(180deg);
+}
+
+.floral-event-card h3 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.floral-event-card h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(170px, 70%);
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-500), transparent);
+}
+
+.feature-card.floral-event-card h3::after {
+  background: linear-gradient(90deg, var(--gold-300), transparent);
+}
+
+.floral-event-card .event-label {
+  margin-bottom: 10px;
+}
+
+.floral-event-card .event-time {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.38rem;
+  color: var(--emerald-800);
+}
+
+.feature-card.floral-event-card .event-time {
+  color: var(--gold-300);
+}
+
+.floral-event-card .event-location {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+/* Premium map button */
+.premium-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: 1px solid rgba(141,106,45,.36);
+  border-radius: 999px;
+  text-decoration: none;
+  color: #76541f;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.65), rgba(238,226,200,.62));
+  box-shadow: 0 10px 24px rgba(21,39,31,.08);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.feature-card .premium-map-link {
+  color: var(--gold-300);
+  border-color: rgba(239,221,168,.36);
+  background: rgba(255,255,255,.035);
+}
+
+.premium-map-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(21,39,31,.13);
+}
+
+.map-pin {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: .55rem;
+}
+
+.map-arrow {
+  font-size: 1rem;
+  transition: transform .25s ease;
+}
+
+.premium-map-link:hover .map-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Mobile layout */
+@media (max-width: 720px) {
+  .event-row {
+    gap: 0;
+    margin-bottom: 30px;
+  }
+
+  .floral-event-card {
+    padding: 48px 24px 42px;
+  }
+
+  .floral-corner {
+    width: 48px;
+    height: 48px;
+    font-size: 1.35rem;
+  }
+
+  .floral-corner::before {
+    width: 34px;
+  }
+
+  .floral-corner::after {
+    height: 34px;
+  }
+
+  .floral-top-left,
+  .floral-top-right {
+    top: 12px;
+  }
+
+  .floral-bottom-left,
+  .floral-bottom-right {
+    bottom: 12px;
+  }
+
+  .floral-top-left,
+  .floral-bottom-left {
+    left: 12px;
+  }
+
+  .floral-top-right,
+  .floral-bottom-right {
+    right: 12px;
+  }
+
+  .premium-map-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
