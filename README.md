@@ -1,11 +1,11 @@
-# Cinematic Final v4
+# Cinematic Final v4 — Button Fix
 
-Changes:
-- Removed the duplicate normal invitation page.
-- The invitation now appears only in the parchment-scroll modal.
-- Removed the Invitation item from the navigation menu.
-- Read the Invitation button remains on the main hero section.
-- Split doors, petals, gold dust, music, events, countdown and contacts remain unchanged.
+Fixed:
+- Read the Invitation button now opens the parchment-scroll modal.
+- × button closes it.
+- Clicking the dark background closes it.
+- Escape key closes it.
+- Split doors, music, petals, gold dust, celebrations, countdown and contacts remain unchanged.
 
-Replace all repository files and the full assets folder with this package.
-Open the deployed site once with `?v=40` to bypass old browser cache.
+Replace all repository files and the full assets folder.
+Open the deployed site once with `?v=41` to bypass the old cached JavaScript.
