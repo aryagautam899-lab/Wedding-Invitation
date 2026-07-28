@@ -1,10 +1,14 @@
-# Corrected Final v2
+# Cinematic Final v3
 
-Changes:
-- Restored the Read the Invitation button.
-- The button now opens and closes a parchment-style invitation scroll.
-- The invitation text includes Bhavini, Tanveer, and the groom’s parents’ names.
-- View Map buttons are smaller and more refined.
-- Existing split-door opening, events, Anand Karaj, countdown, music and contacts are retained.
+Added:
+- Read the Invitation button opens a centred parchment-scroll modal.
+- Click outside, press ×, or press Escape to close it.
+- Split-door opening remains.
+- Lightweight flower petals return.
+- Lightweight gold dust particles return.
+- Particle counts are capped to protect PC and mobile performance.
+- Compact View Map buttons remain.
+- Anand Karaj, contact numbers, music, countdown and Mughal styling are retained.
 
-Replace all repository files and the entire assets folder with this package.
+Replace all repository files and the full assets folder with this package.
+Open the deployed site with `?v=30` once to bypass old browser cache.

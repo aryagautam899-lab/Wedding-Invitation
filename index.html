@@ -9,9 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=30">
 </head>
 <body class="locked">
+  <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
+  <div id="dustLayer" class="dust-layer" aria-hidden="true"></div>
   <section id="doors" class="doors" aria-label="Open wedding invitation">
     <div class="door door-left"><div class="door-arch"></div></div>
     <div class="door door-right"><div class="door-arch"></div></div>
@@ -55,40 +57,6 @@
         <p class="hero-copy">invite you to share in the joy of their wedding celebrations</p>
         <p class="hero-date">15 · 16 August 2026</p>
         <button class="outline-button invitation-toggle" id="invitationToggle" type="button">Read the Invitation</button>
-      </div>
-    </section>
-
-
-    <section id="invitationScrollSection" class="invitation-scroll-section" aria-hidden="true">
-      <div class="scroll-wrap">
-        <div class="scroll-rod scroll-rod-top"></div>
-        <div class="scroll-paper">
-          <div class="scroll-arch"></div>
-          <div class="scroll-content">
-            <div class="om scroll-om">ॐ</div>
-            <p class="eyebrow dark">With the blessings of</p>
-            <h3>
-              Late Sh. K.D. Sharma<br>
-              <span>&amp;</span><br>
-              Smt. Chanchal Sharma
-            </h3>
-            <div class="divider"><b>◆</b></div>
-            <p class="scroll-copy">
-              Sh. Ajay Gautam &amp; Smt. Poonam Sharma<br>
-              solicit the honour of your gracious presence<br>
-              at the wedding celebration of their beloved daughter
-            </p>
-            <div class="scroll-couple">
-              <strong>Bhavini</strong>
-              <small>with</small>
-              <strong>Tanveer</strong>
-            </div>
-            <p class="scroll-groom-names">
-              Sd. Maninder Singh &amp; Sdn. Kamalpreet Kaur
-            </p>
-          </div>
-        </div>
-        <div class="scroll-rod scroll-rod-bottom"></div>
       </div>
     </section>
 
@@ -190,6 +158,50 @@
     </section>
   </main>
 
+
+  <div id="invitationModal" class="invitation-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-invitation></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="invitationTitle">
+      <button id="closeInvitation" class="modal-close" type="button" aria-label="Close invitation">×</button>
+
+      <div class="modal-scroll">
+        <div class="modal-rod modal-rod-top"></div>
+        <div class="modal-paper">
+          <div class="modal-arch"></div>
+          <div class="modal-corner mc-tl"></div>
+          <div class="modal-corner mc-tr"></div>
+          <div class="modal-corner mc-bl"></div>
+          <div class="modal-corner mc-br"></div>
+
+          <div class="modal-content">
+            <div class="om dark-om">ॐ</div>
+            <p class="eyebrow dark">With the blessings of</p>
+            <h3 id="invitationTitle">
+              Late Sh. K.D. Sharma<br>
+              <span>&amp;</span><br>
+              Smt. Chanchal Sharma
+            </h3>
+            <div class="divider"><b>◆</b></div>
+            <p class="modal-copy">
+              <strong>Sh. Ajay Gautam &amp; Smt. Poonam Sharma</strong><br>
+              solicit the honour of your gracious presence<br>
+              at the wedding celebration of their beloved daughter
+            </p>
+            <div class="modal-couple">
+              <strong>Bhavini</strong>
+              <small>with</small>
+              <strong>Tanveer</strong>
+            </div>
+            <p class="modal-groom-names">
+              Sd. Maninder Singh &amp; Sdn. Kamalpreet Kaur
+            </p>
+          </div>
+        </div>
+        <div class="modal-rod modal-rod-bottom"></div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <strong>B <span>&</span> T</strong>
     <p>Bhavini with Tanveer</p>
@@ -201,8 +213,8 @@
   </div>
 
   <audio id="music" loop preload="auto">
-    <source src="assets/music.wav?v=20" type="audio/wav">
+    <source src="assets/music.wav?v=30" type="audio/wav">
   </audio>
-  <script src="script.js?v=20"></script>
+  <script src="script.js?v=30"></script>
 </body>
 </html>
