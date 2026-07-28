@@ -1,26 +1,11 @@
-# Rebuilt Wedding Invitation Website
+# Updated Wedding Invitation Website
 
-This is a clean rebuild focused on appearance, speed, and device compatibility.
+Changes:
+- First contact number changed to 7986503806
+- Generated invitation card added as a full responsive section
+- New pleasant background instrumental included
+- RSVP and attendance features removed
+- No use of the word “royal”
+- Existing lightweight, optimized layout retained
 
-## Included
-
-- Emerald, cream, sage and gold theme
-- Invitation-card-inspired central section
-- Only 15 and 16 August events
-- No RSVP or attendance form
-- View Map buttons
-- Built-in original pleasant instrumental music
-- Countdown
-- Mobile, tablet, laptop and desktop layouts
-- Minimal JavaScript and no heavy particle effects
-
-## Upload
-
-Extract the ZIP and upload all files to the root of your existing GitHub repository:
-
-- index.html
-- style.css
-- script.js
-- assets/
-
-Replace the existing files and commit. GitHub Pages will redeploy automatically.
+Upload all files and the assets folder to the root of the GitHub repository, replacing the current files.
