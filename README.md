@@ -1,16 +1,26 @@
-# Floral Royal Events — No RSVP
+# Rebuilt Wedding Invitation Website
 
-Updates in this version:
+This is a clean rebuild focused on appearance, speed, and device compatibility.
 
-- RSVP and attendance features completely removed
-- RSVP navigation link removed
-- RSVP JavaScript removed
-- Event cards redesigned with floral corner ornaments
-- Reception and Laavaan venue sections made more premium
-- Date panels restyled with royal borders and depth
-- Map buttons redesigned as premium pill-shaped controls
-- Responsive layout retained for phones, tablets, laptops and desktops
-- Only 15 and 16 August events remain
+## Included
 
-Upload all files over the current GitHub repository files and commit the changes.
-GitHub Pages will update automatically.
+- Emerald, cream, sage and gold theme
+- Invitation-card-inspired central section
+- Only 15 and 16 August events
+- No RSVP or attendance form
+- View Map buttons
+- Built-in original pleasant instrumental music
+- Countdown
+- Mobile, tablet, laptop and desktop layouts
+- Minimal JavaScript and no heavy particle effects
+
+## Upload
+
+Extract the ZIP and upload all files to the root of your existing GitHub repository:
+
+- index.html
+- style.css
+- script.js
+- assets/
+
+Replace the existing files and commit. GitHub Pages will redeploy automatically.
