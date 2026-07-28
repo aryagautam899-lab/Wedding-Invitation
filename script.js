@@ -1,1 +1,50 @@
-document.addEventListener("DOMContentLoaded",()=>{const toggle=document.getElementById("doorToggle"),open=document.getElementById("openBtn"),music=document.getElementById("music"),btn=document.getElementById("musicBtn"),label=document.getElementById("musicLabel"),menu=document.getElementById("menuBtn"),nav=document.getElementById("nav"),petals=document.getElementById("petals"),dust=document.getElementById("dust");open?.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle.checked=true;toggle.dispatchEvent(new Event("change"))}});toggle?.addEventListener("change",async()=>{if(!toggle.checked)return;document.body.classList.remove("locked");try{await music.play();btn.textContent="Ⅱ";label.textContent="Playing"}catch{label.textContent="Tap to play"}});btn?.addEventListener("click",async()=>{if(music.paused){try{await music.play();btn.textContent="Ⅱ";label.textContent="Playing"}catch{label.textContent="Tap again"}}else{music.pause();btn.textContent="♪";label.textContent="Paused"}});menu?.addEventListener("click",()=>nav.classList.toggle("open"));nav?.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));const target=new Date("2026-08-15T19:30:00+05:30").getTime();function tick(){const d=target-Date.now();if(d<=0)return;const v={days:Math.floor(d/86400000),hours:Math.floor(d%86400000/3600000),minutes:Math.floor(d%3600000/60000),seconds:Math.floor(d%60000/1000)};Object.entries(v).forEach(([k,n])=>document.getElementById(k).textContent=String(n).padStart(2,"0"))}tick();setInterval(tick,1000);function addPetal(){if(petals.childElementCount>25)return;const p=document.createElement("i");p.className="petal";p.style.left=Math.random()*100+"vw";p.style.setProperty("--x",(Math.random()-.5)*280+"px");p.style.animationDuration=7+Math.random()*6+"s";petals.appendChild(p);setTimeout(()=>p.remove(),14000)}function addDust(){if(dust.childElementCount>24)return;const s=document.createElement("i");s.className="speck";s.style.left=Math.random()*100+"vw";s.style.animationDuration=5+Math.random()*5+"s";dust.appendChild(s);setTimeout(()=>s.remove(),11000)}setInterval(addPetal,550);setInterval(addDust,600)});
+document.addEventListener("DOMContentLoaded",()=>{
+  const gate=document.getElementById("gate"),openGate=document.getElementById("openGate");
+  const music=document.getElementById("music"),musicBtn=document.getElementById("musicBtn"),musicText=document.getElementById("musicText");
+  const scrollStage=document.querySelector(".scroll-stage"),scrollToggle=document.getElementById("scrollToggle"),scrollClose=document.getElementById("scrollClose"),scrollLabel=document.getElementById("scrollLabel");
+  const menuBtn=document.getElementById("menuBtn"),nav=document.getElementById("nav");
+
+  openGate.addEventListener("click",async()=>{
+    gate.classList.add("open");
+    document.body.classList.remove("locked");
+    try{await music.play();musicBtn.textContent="Ⅱ";musicText.textContent="Playing"}catch{}
+    setTimeout(()=>gate.classList.add("done"),1300);
+  });
+
+  function setScroll(open){
+    scrollStage.classList.toggle("open",open);
+    scrollToggle.setAttribute("aria-expanded",String(open));
+    scrollLabel.textContent=open?"Tap to roll the scroll closed":"Tap the scroll to open";
+  }
+  scrollToggle.addEventListener("click",()=>setScroll(!scrollStage.classList.contains("open")));
+  scrollClose.addEventListener("click",()=>setScroll(false));
+
+  musicBtn.addEventListener("click",async()=>{
+    if(music.paused){try{await music.play();musicBtn.textContent="Ⅱ";musicText.textContent="Playing"}catch{}}
+    else{music.pause();musicBtn.textContent="♪";musicText.textContent="Paused"}
+  });
+
+  menuBtn.addEventListener("click",()=>nav.classList.toggle("open"));
+  nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+
+  const target=new Date("2026-08-15T19:30:00+05:30").getTime();
+  function tick(){
+    let d=target-Date.now(); if(d<0)d=0;
+    const vals={days:Math.floor(d/86400000),hours:Math.floor((d%86400000)/3600000),minutes:Math.floor((d%3600000)/60000),seconds:Math.floor((d%60000)/1000)};
+    for(const [id,v] of Object.entries(vals))document.getElementById(id).textContent=String(v).padStart(2,"0");
+  }
+  tick();setInterval(tick,1000);
+
+  function petal(){
+    if(document.hidden||document.querySelectorAll(".petal").length>22)return;
+    const p=document.createElement("span");p.className="petal";
+    p.style.left=Math.random()*100+"vw";p.style.setProperty("--drift",(Math.random()-.5)*280+"px");
+    p.style.animationDuration=7+Math.random()*6+"s";document.getElementById("petals").appendChild(p);
+    setTimeout(()=>p.remove(),14000);
+  }
+  function spark(){
+    if(document.hidden||document.querySelectorAll(".spark").length>22)return;
+    const s=document.createElement("span");s.className="spark";s.style.left=Math.random()*100+"vw";s.style.animationDuration=5+Math.random()*5+"s";document.getElementById("dust").appendChild(s);setTimeout(()=>s.remove(),11000);
+  }
+  setInterval(petal,650);setInterval(spark,620);
+});
