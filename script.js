@@ -57,4 +57,54 @@ document.addEventListener("DOMContentLoaded",()=>{
     s.style.animationDuration=5+Math.random()*5+"s";document.getElementById("dust").appendChild(s);setTimeout(()=>s.remove(),11000);
   }
   setInterval(addPetal,650);setInterval(addSpark,620);
+
+
+  const openingGate = document.getElementById("openingGate");
+  const openingButton = document.getElementById("openingButton");
+  const openingBurst = document.getElementById("openingBurst");
+
+  function createOpeningBurst() {
+    if (!openingBurst) return;
+    openingBurst.innerHTML = "";
+
+    for (let i = 0; i < 24; i++) {
+      const petal = document.createElement("span");
+      petal.className = "opening-burst-petal";
+
+      const angle = (Math.PI * 2 * i) / 24 + Math.random() * .24;
+      const distance = 120 + Math.random() * 280;
+
+      petal.style.setProperty("--x", `${Math.cos(angle) * distance}px`);
+      petal.style.setProperty("--y", `${Math.sin(angle) * distance}px`);
+      petal.style.setProperty("--r", `${Math.random() * 760 - 380}deg`);
+      petal.style.animationDelay = `${Math.random() * .12}s`;
+
+      openingBurst.appendChild(petal);
+    }
+
+    window.setTimeout(() => {
+      openingBurst.innerHTML = "";
+    }, 1800);
+  }
+
+  openingButton?.addEventListener("click", async () => {
+    if (!openingGate || openingGate.classList.contains("is-opening")) return;
+
+    openingGate.classList.add("is-opening");
+    document.body.classList.remove("opening-locked");
+    createOpeningBurst();
+
+    try {
+      if (music && music.paused) {
+        await music.play();
+        musicButton.textContent = "Ⅱ";
+        musicStatus.textContent = "Playing";
+      }
+    } catch {}
+
+    window.setTimeout(() => {
+      openingGate.classList.add("is-open");
+    }, 1550);
+  });
+
 });
