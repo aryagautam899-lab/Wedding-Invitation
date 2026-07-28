@@ -1,12 +1,16 @@
-# Cinematic Final v6 — Invitation Modal Guaranteed Fix
+# Cinematic Final v7 — Opening Fixed
 
-The Read the Invitation control now uses a CSS `:target` fallback.
+The previous JavaScript file had accidentally lost the Open Invitation handler
+and referenced undefined particle elements. That is why the button did nothing
+on PC.
 
-That means:
-- It opens on PC even if JavaScript fails or loads late.
-- JavaScript still locks background scrolling and handles Escape.
-- × and clicking the dark background close it.
-- Split doors, music, petals, gold dust, events, countdown and contacts remain.
+Fixed:
+- Open Invitation now triggers the full split-door animation.
+- The website rises into view after the doors open.
+- Music control works.
+- Read the Invitation modal works.
+- Petals and gold dust work without JavaScript errors.
+- Countdown and navigation remain working.
 
-Replace all repository files and the complete assets folder.
-After deployment, open the website once with `?v=60`.
+Replace every repository file and the complete assets folder.
+After GitHub Pages deploys, open the site once with `?v=70`.
