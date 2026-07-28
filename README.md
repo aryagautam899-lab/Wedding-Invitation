@@ -1,10 +1,17 @@
-# Bhavini & Tanveer — Light Golden Palace Final v2
+# Bhavini & Tanveer — Guaranteed Light Palace
 
-This version uses completely new asset filenames so GitHub Pages and browsers cannot reuse the old palace from cache.
+This version embeds the new light-golden palace directly inside a completely new stylesheet.
 
-New files used by the site:
-- assets/palace-light-golden-v2.jpg
-- assets/palace-light-countdown-v2.jpg
+Why this guarantees the change:
+- the hero no longer depends on a separate palace image filename
+- the palace is embedded directly in CSS as data
+- the stylesheet has a brand-new filename: light-palace-theme-1000.css
+- old cached style.css or palace files cannot be used by this version
 
-Upload every file and the complete assets folder.
-After deployment, open once with `?v=970` or hard refresh.
+Everything else remains unchanged.
+
+Deployment:
+1. Delete/replace the existing repository files.
+2. Upload every file and the full assets folder from this package.
+3. Confirm `light-palace-theme-1000.css` is visible in the repository root.
+4. Open the deployed site with `?v=1000`.
