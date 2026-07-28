@@ -1,14 +1,9 @@
-# Stylish Wedding Invitation Website
+# Elegant Ornament Update
 
-This version fixes the issues shown in your screenshots:
+Changes:
+- Removed the childish flower symbols
+- Replaced them with restrained geometric and Mughal-inspired line ornaments
+- Added groom’s parents below Tanveer’s name in the invitation card
+- Kept the existing layout, dates, music, contact numbers and responsive behaviour
 
-- A more decorative first page
-- A proper two-column Reception card that no longer breaks into one letter per line
-- A digital invitation card created with HTML and CSS, inspired by the reference image rather than using the image itself
-- Only 15 and 16 August events
-- No RSVP or attendance feature
-- Updated first phone number: 7986503806
-- Working background music
-- Responsive layouts for mobile, tablet and desktop
-
-Upload all files and the assets folder to the root of your GitHub repository and replace the existing files.
+Upload all files and replace the existing repository files.

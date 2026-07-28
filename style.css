@@ -27,3 +27,196 @@ footer{padding:38px 20px;text-align:center;background:#041a15}footer strong{font
 @media(max-width:980px){.event-grid{grid-template-columns:1fr}.event-card{grid-template-columns:190px 1fr}}
 @media(max-width:760px){nav{display:none;position:absolute;top:72px;left:0;right:0;padding:22px;flex-direction:column;background:var(--deep)}nav.open{display:flex}.menu{display:block}.hero{min-height:auto;padding:90px 18px}.digital-card{min-height:700px;padding:76px 24px}.event-card{grid-template-columns:1fr}.event-date-panel{min-height:150px;border-right:0;border-bottom:1px solid rgba(184,145,61,.3)}}
 @media(max-width:560px){.entry-frame{padding:52px 20px}.entry h1{font-size:4.4rem}.script-name{font-size:clamp(4.2rem,21vw,6rem)}.invitation-section{padding:14px}.digital-card{outline-width:0;border-width:2px}.arch-a{width:90%;height:28%}.arch-b{width:76%;height:22%}.floral-cluster{font-size:3.5rem}.event-content{padding:40px 24px}.countdown{grid-template-columns:repeat(2,1fr)}.music-player div{display:none}.music-player{padding:6px}}
+
+
+/* =====================================================
+   ELEGANT ORNAMENT UPDATE
+   Replaces childish flower glyphs with restrained geometry
+   ===================================================== */
+
+.entry-flower,
+.hero-ornament,
+.floral-cluster,
+.event-flower {
+  font-size: 0 !important;
+  color: transparent !important;
+}
+
+/* Entry and hero corner ornaments */
+.entry-flower,
+.hero-ornament {
+  width: 72px;
+  height: 72px;
+  opacity: .48;
+}
+
+.entry-flower::before,
+.entry-flower::after,
+.hero-ornament::before,
+.hero-ornament::after {
+  content: "";
+  position: absolute;
+  background: var(--gold2);
+}
+
+.entry-flower::before,
+.hero-ornament::before {
+  width: 58px;
+  height: 1px;
+  top: 8px;
+  left: 8px;
+}
+
+.entry-flower::after,
+.hero-ornament::after {
+  width: 1px;
+  height: 58px;
+  top: 8px;
+  left: 8px;
+}
+
+.ef2,
+.ho2 {
+  transform: rotate(90deg);
+}
+
+.ef3,
+.ho3 {
+  transform: rotate(-90deg);
+}
+
+.ef4,
+.ho4 {
+  transform: rotate(180deg);
+}
+
+/* Invitation card side ornaments */
+.floral-cluster {
+  width: 150px;
+  height: 210px;
+  bottom: 28px;
+  opacity: .34;
+  border-left: 1px solid rgba(12,61,49,.42);
+  border-bottom: 1px solid rgba(184,145,61,.42);
+  border-radius: 0 0 0 90px;
+}
+
+.floral-cluster::before,
+.floral-cluster::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(184,145,61,.38);
+  border-radius: 50%;
+}
+
+.floral-cluster::before {
+  width: 72px;
+  height: 110px;
+  left: 20px;
+  bottom: 22px;
+  transform: rotate(-28deg);
+}
+
+.floral-cluster::after {
+  width: 46px;
+  height: 76px;
+  left: 72px;
+  bottom: 72px;
+  transform: rotate(24deg);
+}
+
+.right-cluster {
+  transform: scaleX(-1);
+}
+
+/* Event card corner ornaments */
+.event-flower {
+  width: 54px;
+  height: 54px;
+  opacity: .5;
+}
+
+.event-flower::before,
+.event-flower::after {
+  content: "";
+  position: absolute;
+  background: var(--gold);
+}
+
+.event-flower::before {
+  width: 44px;
+  height: 1px;
+  right: 0;
+  top: 0;
+}
+
+.event-flower::after {
+  width: 1px;
+  height: 44px;
+  right: 0;
+  top: 0;
+}
+
+.event-flower.bottom {
+  transform: rotate(180deg);
+}
+
+/* Groom's parents */
+.groom-parents {
+  margin: 24px auto 0;
+  padding-top: 18px;
+  max-width: 620px;
+  border-top: 1px solid rgba(184,145,61,.42);
+  color: var(--ink);
+  font: 1.05rem/1.55 "Cormorant Garamond", serif;
+  letter-spacing: .01em;
+}
+
+.groom-parents b {
+  display: inline-block;
+  margin-bottom: 4px;
+  color: #7a5a20;
+  font-family: "Manrope", sans-serif;
+  font-size: .68rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* Give invitation card a more grown-up finish */
+.digital-card {
+  background:
+    linear-gradient(rgba(251,245,232,.97), rgba(246,236,215,.97)),
+    repeating-linear-gradient(0deg, transparent 0 7px, rgba(184,145,61,.025) 7px 8px);
+}
+
+.digital-card::after {
+  content: "";
+  position: absolute;
+  inset: 34px;
+  border: 1px solid rgba(23,53,43,.14);
+  pointer-events: none;
+}
+
+@media (max-width: 560px) {
+  .floral-cluster {
+    width: 88px;
+    height: 130px;
+  }
+
+  .floral-cluster::before {
+    width: 44px;
+    height: 72px;
+  }
+
+  .floral-cluster::after {
+    width: 30px;
+    height: 50px;
+    left: 42px;
+    bottom: 44px;
+  }
+
+  .groom-parents {
+    font-size: .96rem;
+    padding-inline: 8px;
+  }
+}
