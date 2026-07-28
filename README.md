@@ -1,12 +1,10 @@
-# Corrected Final Wedding Invitation
+# Corrected Final v2
 
-This version directly fixes the three reported problems:
+Changes:
+- Restored the Read the Invitation button.
+- The button now opens and closes a parchment-style invitation scroll.
+- The invitation text includes Bhavini, Tanveer, and the groom’s parents’ names.
+- View Map buttons are smaller and more refined.
+- Existing split-door opening, events, Anand Karaj, countdown, music and contacts are retained.
 
-- The split-door opening animation works and stays visible for the full animation.
-- The Reception card uses a stable responsive grid, so its title cannot collapse into single letters.
-- Mughal-inspired arches and line-art ornaments are visibly applied to the hero and invitation card.
-- The second ceremony is named Anand Karaj.
-- Groom's parents are written below Tanveer without a heading.
-- No RSVP or attendance form is included.
-
-Replace every current repository file and the entire assets folder with this package.
+Replace all repository files and the entire assets folder with this package.

@@ -64,3 +64,24 @@ function updateCountdown(){
 }
 updateCountdown();
 setInterval(updateCountdown,1000);
+
+
+const invitationToggle = document.getElementById("invitationToggle");
+const invitationScrollSection = document.getElementById("invitationScrollSection");
+
+if (invitationToggle && invitationScrollSection) {
+  invitationToggle.addEventListener("click", () => {
+    const isOpen = invitationScrollSection.classList.toggle("open");
+    invitationScrollSection.setAttribute("aria-hidden", String(!isOpen));
+    invitationToggle.textContent = isOpen ? "Close the Invitation" : "Read the Invitation";
+
+    if (isOpen) {
+      setTimeout(() => {
+        invitationScrollSection.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 120);
+    }
+  });
+}
