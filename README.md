@@ -1,17 +1,16 @@
-# Bhavini & Tanveer — Guaranteed Light Palace
+# Bhavini & Tanveer — Bright Palace Sides Final
 
-This version embeds the new light-golden palace directly inside a completely new stylesheet.
+This version keeps the completed website unchanged and adjusts only the hero transparency:
 
-Why this guarantees the change:
-- the hero no longer depends on a separate palace image filename
-- the palace is embedded directly in CSS as data
-- the stylesheet has a brand-new filename: light-palace-theme-1000.css
-- old cached style.css or palace files cannot be used by this version
-
-Everything else remains unchanged.
+- right side remains bright; no dark overlay panel
+- more of the palace and golden sky are visible
+- left invitation panel is more transparent
+- text shadows preserve readability
+- mobile/tablet readability remains protected
+- split opening, invitation scroll, parents, events, countdown, footer and music are unchanged
 
 Deployment:
-1. Delete/replace the existing repository files.
-2. Upload every file and the full assets folder from this package.
-3. Confirm `light-palace-theme-1000.css` is visible in the repository root.
-4. Open the deployed site with `?v=1000`.
+1. Replace all repository files with this package.
+2. Upload the complete assets folder.
+3. Confirm `bright-palace-theme-1010.css` is in the repository root.
+4. Open the site with `?v=1010` or hard refresh.
