@@ -1,20 +1,10 @@
-# Bhavini & Tanveer — Light Golden Palace Final
+# Bhavini & Tanveer — Light Golden Palace Final v2
 
-This version keeps the completed website unchanged and replaces only the palace artwork.
+This version uses completely new asset filenames so GitHub Pages and browsers cannot reuse the old palace from cache.
 
-Included:
-- new taller light-golden palace hero
-- matching clean countdown background
-- split-door opening
-- clear Ganesha artwork
-- invitation scroll with rolling open/close
-- groom's parents line fully visible and bold
-- Reception of Baraat — 15 August
-- Anand Karaj — 16 August
-- live countdown
-- Gautam Family footer
-- floating click-to-call number boxes
-- responsive layouts for phones, tablets, laptops and desktops
+New files used by the site:
+- assets/palace-light-golden-v2.jpg
+- assets/palace-light-countdown-v2.jpg
 
-Upload every file and the complete assets folder to your repository root.
-After deployment, open once with `?v=960` or hard refresh.
+Upload every file and the complete assets folder.
+After deployment, open once with `?v=970` or hard refresh.
