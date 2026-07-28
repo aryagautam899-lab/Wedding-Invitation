@@ -1,12 +1,5 @@
-# Bhavini & Tanveer — Royal Ganesha v2
+# Clean Rebuild
 
-This version fixes the remaining issues:
+This rebuild removes all screenshot-based event and countdown assets. The hero background is a palace-only crop with no baked side text. Event cards and countdown are rendered entirely from HTML/CSS.
 
-- clearer digital Ganesha icon
-- removed the Punjabi symbol above Anand Karaj
-- decorated event invitation cards with corner ornaments, arches, lanterns and cleaner styling
-- cleaned hero background so baked-in background text is hidden
-- cleaned countdown background so no random numbers/text appear behind the countdown
-
-Upload all files and the full assets folder to the root of your GitHub repo and replace the older files.
-After deploying, hard refresh once or open the site with `?v=402`.
+Upload every file and the complete `assets` folder. After deployment, open once with `?v=500`.
