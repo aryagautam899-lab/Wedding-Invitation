@@ -1,12 +1,11 @@
-# Bhavini & Tanveer — v4 Responsive Fix
+# Bhavini & Tanveer — v5 Parents Fix
 
-This version keeps the v3 design unchanged.
+Only the invitation scroll was corrected:
 
-Only responsive visibility was adjusted:
-- groom's parents' names are no longer cropped on PC
-- invitation scroll height adapts for desktop, laptop, tablet and phone
-- text wrapping and bottom spacing are improved
-- split opening and every other section remain unchanged
+- groom’s parents are now directly below Tanveer
+- groom’s parents use the same Cormorant Garamond font and bold weight as Sh. Ajay Gautam & Smt. Poonam Sharma
+- the open parchment itself is taller on desktop, laptop, tablet and mobile
+- reserved space above the bottom roller prevents the line from being covered
+- every other design and feature remains unchanged
 
-Upload all files and the full assets folder.
-After deployment, hard refresh or open once with `?v=930`.
+Upload all files and the full assets folder. After deployment, open once with `?v=940` or hard refresh.
