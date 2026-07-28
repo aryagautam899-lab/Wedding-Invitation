@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#06271f">
   <meta name="description" content="The royal wedding invitation of Bhavini and Tanveer">
   <meta property="og:title" content="Bhavini & Tanveer | Wedding Invitation">
@@ -20,6 +20,8 @@
   <div class="grain" aria-hidden="true"></div>
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
   <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
+  <div class="daylight-overlay" aria-hidden="true"></div>
+  <div id="sparkleLayer" class="sparkle-layer" aria-hidden="true"></div>
 
   <div id="preloader" class="preloader">
     <div class="preloader-mark">B <span>&</span> T</div>
@@ -59,7 +61,6 @@
     <nav id="navMenu" class="nav-menu">
       <a href="#home">Home</a>
       <a href="#celebrations">Celebrations</a>
-      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -76,12 +77,12 @@
 
       <div class="hero-content reveal">
         <p class="kicker">Together with their families</p>
-        <div class="hero-names">
-          <h1>Bhavini</h1>
+        <div class="hero-names animated-names">
+          <h1 class="write-name name-one">Bhavini</h1>
           <div class="hero-symbol">
-            <span></span><b>&</b><span></span>
+            <span></span><b class="gold-amp">&</b><span></span>
           </div>
-          <h1>Tanveer</h1>
+          <h1 class="write-name name-two">Tanveer</h1>
         </div>
         <p class="hero-copy">
           invite you to share in the joy of their wedding celebrations
@@ -112,6 +113,27 @@
       </div>
     </section>
 
+    <section class="scroll-invitation-section">
+      <div class="scroll-shell reveal">
+        <button id="openScroll" class="scroll-toggle" type="button">Read the Royal Invitation</button>
+        <div id="invitationScroll" class="invitation-scroll">
+          <div class="scroll-top"></div>
+          <div class="scroll-paper">
+            <div class="wax-seal">B<span>&</span>T</div>
+            <p class="kicker dark">With immense joy</p>
+            <h2>We request the pleasure of your company</h2>
+            <p>
+              as our families gather to celebrate the wedding of
+              <strong>Bhavini with Tanveer</strong>.
+              Your gracious presence will make these sacred and joyful occasions truly complete.
+            </p>
+            <p class="scroll-signoff">With warm regards<br><b>Gautam Family</b></p>
+          </div>
+          <div class="scroll-bottom"></div>
+        </div>
+      </div>
+    </section>
+
     <section class="countdown-section">
       <div class="section-intro reveal">
         <p class="kicker">The royal celebration begins in</p>
@@ -119,13 +141,13 @@
       </div>
 
       <div id="countdown" class="countdown reveal">
-        <div class="count-box"><strong id="days">00</strong><span>Days</span></div>
+        <div class="count-box"><strong id="days" class="flip-value">00</strong><span>Days</span></div>
         <div class="count-divider">:</div>
-        <div class="count-box"><strong id="hours">00</strong><span>Hours</span></div>
+        <div class="count-box"><strong id="hours" class="flip-value">00</strong><span>Hours</span></div>
         <div class="count-divider">:</div>
-        <div class="count-box"><strong id="minutes">00</strong><span>Minutes</span></div>
+        <div class="count-box"><strong id="minutes" class="flip-value">00</strong><span>Minutes</span></div>
         <div class="count-divider">:</div>
-        <div class="count-box"><strong id="seconds">00</strong><span>Seconds</span></div>
+        <div class="count-box"><strong id="seconds" class="flip-value">00</strong><span>Seconds</span></div>
       </div>
 
       <p class="countdown-caption reveal">Reception of Baraat · Saturday, 15 August 2026 · 7:30 PM</p>
@@ -164,6 +186,11 @@
             <h3>Reception of Baraat</h3>
             <p class="event-time">7:30 PM onwards</p>
             <p class="event-location">Club Cabbana<br>Jalandhar–Phagwara Highway</p>
+            <div class="venue-meta">
+              <span>Formal / festive attire</span>
+              <span>Guest parking available</span>
+              <span>Arrive by 7:15 PM</span>
+            </div>
             <a href="https://www.google.com/maps/search/?api=1&query=Club+Cabbana+Jalandhar+Phagwara+Highway" target="_blank" rel="noopener" class="map-link">View location <span>↗</span></a>
           </div>
         </article>
@@ -179,6 +206,11 @@
             <h3>Laavaan Phere</h3>
             <p class="event-time">11:00 AM</p>
             <p class="event-location">Gurudwara Bhai Ghaniya Ji Sewa Simran Kendar<br>Chahal Nagar, Phagwara</p>
+            <div class="venue-meta">
+              <span>Traditional attire</span>
+              <span>Please cover your head</span>
+              <span>Arrive by 10:30 AM</span>
+            </div>
             <a href="https://www.google.com/maps/search/?api=1&query=Gurudwara+Bhai+Ghaniya+Ji+Sewa+Simran+Kendar+Chahal+Nagar+Phagwara" target="_blank" rel="noopener" class="map-link">View location <span>↗</span></a>
           </div>
         </article>
@@ -190,36 +222,6 @@
       <blockquote class="reveal">
         “Two families, one promise,<br>and a lifetime of beautiful beginnings.”
       </blockquote>
-    </section>
-
-    <section id="gallery" class="gallery">
-      <div class="section-intro reveal">
-        <p class="kicker">Memories in the making</p>
-        <h2>Our Gallery</h2>
-      </div>
-
-      <div class="gallery-mosaic">
-        <button class="gallery-tile tile-one reveal" data-image="assets/photo-1.jpg" aria-label="Open first photo">
-          <img src="assets/photo-1.jpg" alt="Couple photograph" onerror="this.style.display='none'">
-          <span>Add Couple Photo</span>
-        </button>
-        <button class="gallery-tile tile-two reveal" data-image="assets/photo-2.jpg" aria-label="Open second photo">
-          <img src="assets/photo-2.jpg" alt="Wedding invitation photograph" onerror="this.style.display='none'">
-          <span>Add Invitation Photo</span>
-        </button>
-        <button class="gallery-tile tile-three reveal" data-image="assets/photo-3.jpg" aria-label="Open third photo">
-          <img src="assets/photo-3.jpg" alt="Family photograph" onerror="this.style.display='none'">
-          <span>Add Family Photo</span>
-        </button>
-        <button class="gallery-tile tile-four reveal" data-image="assets/photo-4.jpg" aria-label="Open fourth photo">
-          <img src="assets/photo-4.jpg" alt="Celebration photograph" onerror="this.style.display='none'">
-          <span>Add Celebration Photo</span>
-        </button>
-      </div>
-
-      <p class="gallery-help reveal">
-        Add your images as <b>photo-1.jpg</b> to <b>photo-4.jpg</b> inside the assets folder.
-      </p>
     </section>
 
     <section id="rsvp" class="rsvp ivory-section">
@@ -290,16 +292,35 @@
     </section>
   </main>
 
+  <div id="blessingToast" class="blessing-toast">
+    Your presence will make our celebration complete.
+  </div>
+
+  <section class="finale" id="finale">
+    <div class="finale-glow"></div>
+    <div class="finale-content reveal">
+      <span class="finale-symbol">✦</span>
+      <h2>We eagerly await your gracious presence</h2>
+      <p>15 &amp; 16 August 2026</p>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-monogram">B <span>&</span> T</div>
     <p>Bhavini with Tanveer</p>
     <small>August 2026 · Made with love</small>
   </footer>
 
-  <button id="musicToggle" class="music-button" aria-label="Toggle background music">
-    <span class="music-icon">♪</span>
-    <span class="music-rings"></span>
-  </button>
+  <div class="music-player" id="musicPlayer">
+    <button id="musicToggle" class="music-button" aria-label="Toggle background music">
+      <span class="music-icon">♪</span>
+      <span class="music-rings"></span>
+    </button>
+    <div class="music-info">
+      <strong>Royal Instrumental</strong>
+      <span class="equalizer"><i></i><i></i><i></i><i></i><i></i></span>
+    </div>
+  </div>
 
   <audio id="backgroundMusic" loop preload="none">
     <source src="assets/music.mp3" type="audio/mpeg">

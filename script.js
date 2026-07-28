@@ -154,3 +154,86 @@ lightbox.addEventListener("click", event => {
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") closeGallery();
 });
+
+
+// Royal scroll invitation
+const scrollButton = document.getElementById("openScroll");
+const invitationScroll = document.getElementById("invitationScroll");
+if (scrollButton && invitationScroll) {
+  scrollButton.addEventListener("click", () => {
+    const open = invitationScroll.classList.toggle("open");
+    scrollButton.textContent = open ? "Close the Royal Invitation" : "Read the Royal Invitation";
+  });
+}
+
+// Animate countdown digits when values change
+["days","hours","minutes","seconds"].forEach(id => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const observer = new MutationObserver(() => {
+    el.classList.remove("flip");
+    void el.offsetWidth;
+    el.classList.add("flip");
+  });
+  observer.observe(el, { childList: true, characterData: true, subtree: true });
+});
+
+// Upgrade music player state
+const musicPlayer = document.getElementById("musicPlayer");
+if (music && musicPlayer) {
+  music.addEventListener("play", () => musicPlayer.classList.add("playing"));
+  music.addEventListener("pause", () => musicPlayer.classList.remove("playing"));
+}
+
+// Floating blessing message
+const blessingToast = document.getElementById("blessingToast");
+if (blessingToast) {
+  setTimeout(() => {
+    blessingToast.classList.add("show");
+    setTimeout(() => blessingToast.classList.remove("show"), 5000);
+  }, 9000);
+}
+
+// Natural sparkles and finale celebration
+const sparkleLayer = document.getElementById("sparkleLayer");
+function createSparkle(intense = false) {
+  if (!sparkleLayer) return;
+  const sparkle = document.createElement("span");
+  sparkle.className = "sparkle";
+  sparkle.style.left = `${Math.random() * 100}vw`;
+  sparkle.style.bottom = `${-5 + Math.random() * 12}vh`;
+  sparkle.style.animationDuration = `${4 + Math.random() * 5}s`;
+  sparkle.style.opacity = `${.25 + Math.random() * .7}`;
+  sparkle.style.transform = `scale(${.5 + Math.random() * 1.4})`;
+  sparkleLayer.appendChild(sparkle);
+  setTimeout(() => sparkle.remove(), 10000);
+  if (intense && Math.random() > .45) setTimeout(() => createSparkle(false), 100);
+}
+setInterval(() => createSparkle(false), 900);
+
+const finale = document.getElementById("finale");
+let finaleTriggered = false;
+if (finale) {
+  const finaleObserver = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !finaleTriggered) {
+      finaleTriggered = true;
+      for (let i = 0; i < 32; i++) setTimeout(() => createSparkle(true), i * 75);
+      for (let i = 0; i < 18; i++) setTimeout(createPetal, i * 120);
+    }
+  }, { threshold: .35 });
+  finaleObserver.observe(finale);
+}
+
+// Improve petal variety
+const originalCreatePetal = createPetal;
+createPetal = function() {
+  const petal = document.createElement("span");
+  petal.className = "petal";
+  petal.style.left = `${Math.random() * 100}vw`;
+  petal.style.animationDuration = `${8 + Math.random() * 8}s`;
+  petal.style.setProperty("--drift", `${(Math.random() - .5) * 260}px`);
+  petal.style.setProperty("--scale", `${.45 + Math.random() * 1.15}`);
+  petal.style.opacity = `${.18 + Math.random() * .55}`;
+  document.getElementById("petalLayer").appendChild(petal);
+  setTimeout(() => petal.remove(), 17000);
+};

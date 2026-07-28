@@ -1,38 +1,32 @@
-# Premium Emerald Royal Wedding Website — 15 & 16 August Only
+# Ultimate Emerald Royal Wedding Website
 
-This version includes only:
+This version includes:
 
-- 15 August 2026 — Reception of Baraat
-- 16 August 2026 — Laavaan Phere
+- Only 15 and 16 August events
+- No RSVP or attendance form
+- Cinematic palace-door entrance
+- Emerald velvet and gold-foil styling
+- Animated handwritten names
+- Royal scroll invitation with wax seal
+- Flip-style countdown animation
+- Premium venue cards with attire, arrival and parking notes
+- Natural floating petals and gold sparkles
+- Cinematic blur, scale and fade transitions
+- Premium compact music player
+- Floating blessing message
+- Day-to-night ambient lighting
+- Gold hover and shimmer effects
+- Celebration finale
+- Full responsive support for mobile, tablet, laptop and desktop
+- No picture/gallery section
 
-The RSVP and attendance form has been removed.
+## Upload
 
-## Replace the current GitHub files
+Extract the ZIP and upload all files to the root of the existing GitHub repository.
+Allow GitHub to replace the current files, then commit. GitHub Pages will redeploy automatically.
 
-Upload these files to the root of the `Wedding-Invitation` repository:
+## Add music
 
-- `index.html`
-- `style.css`
-- `script.js`
-- `assets/`
+Place your chosen MP3 at:
 
-Allow GitHub to replace the existing files, then commit the changes. GitHub Pages will update automatically.
-
-## Add photographs
-
-Place four JPG images in the assets folder using these exact names:
-
-- `photo-1.jpg`
-- `photo-2.jpg`
-- `photo-3.jpg`
-- `photo-4.jpg`
-
-## Add background music
-
-Place an MP3 inside the assets folder using this exact name:
-
-- `music.mp3`
-
-## Website address
-
-`https://aryagautam899-lab.github.io/Wedding-Invitation/`
+`assets/music.mp3`
