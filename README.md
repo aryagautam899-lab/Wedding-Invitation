@@ -1,17 +1,22 @@
-# Premium Emerald Royal Wedding Website
+# Premium Emerald Royal Wedding Website — 15 & 16 August Only
+
+This version includes only:
+
+- 15 August 2026 — Reception of Baraat
+- 16 August 2026 — Laavaan Phere
+
+The RSVP and attendance form has been removed.
 
 ## Replace the current GitHub files
 
-Upload these files to the **root** of the `Wedding-Invitation` repository:
+Upload these files to the root of the `Wedding-Invitation` repository:
 
 - `index.html`
 - `style.css`
 - `script.js`
 - `assets/`
 
-When GitHub asks whether to replace files with the same names, allow it, then commit the changes.
-
-GitHub Pages will automatically redeploy the updated site.
+Allow GitHub to replace the existing files, then commit the changes. GitHub Pages will update automatically.
 
 ## Add photographs
 
@@ -27,20 +32,6 @@ Place four JPG images in the assets folder using these exact names:
 Place an MP3 inside the assets folder using this exact name:
 
 - `music.mp3`
-
-Music starts only after the guest taps **Open Invitation**, which works with mobile-browser autoplay restrictions.
-
-## RSVP destination
-
-The WhatsApp RSVP goes to:
-
-- `+91 79865 03806`
-
-To change it, open `script.js` and edit:
-
-```js
-const whatsappNumber = "917986503806";
-```
 
 ## Website address
 
