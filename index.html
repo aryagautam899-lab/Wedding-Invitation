@@ -3,37 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#082a22">
+  <meta name="theme-color" content="#061d17">
+  <meta name="description" content="Wedding invitation for Bhavini and Tanveer">
   <title>Bhavini & Tanveer | Wedding Invitation</title>
-  <meta name="description" content="Wedding invitation of Bhavini and Tanveer">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=80">
+  <link rel="stylesheet" href="style.css?v=300">
 </head>
 <body class="locked">
   <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
   <div id="dustLayer" class="dust-layer" aria-hidden="true"></div>
-  <input id="doorToggle" class="door-toggle" type="checkbox" aria-hidden="true">
-  <section id="doors" class="doors" aria-label="Open wedding invitation">
-    <div class="door door-left"><div class="door-arch"></div></div>
-    <div class="door door-right"><div class="door-arch"></div></div>
-    <div class="door-light"></div>
+  <div id="bokehLayer" class="bokeh-layer" aria-hidden="true"></div>
+  <div id="fogLayer" class="fog-layer" aria-hidden="true"><span></span><span></span></div>
 
+  <input id="doorToggle" class="door-toggle" type="checkbox" aria-hidden="true">
+
+  <section class="doors" aria-label="Open wedding invitation">
+    <div class="opening-arch opening-arch-outer"></div>
+    <div class="opening-arch opening-arch-inner"></div>
+    <div class="opening-garland opening-garland-left"></div>
+    <div class="opening-garland opening-garland-right"></div>
+    <div class="opening-lantern ol-1"></div>
+    <div class="opening-lantern ol-2"></div>
+    <div class="opening-lantern ol-3"></div>
+    <div class="opening-lantern ol-4"></div>
+    <div class="opening-floor-glow"></div>
+    <div class="opening-rays"></div>
+    <div class="opening-petal-burst" id="openingBurst"></div>
+    <div class="door door-left"><div class="door-carving"></div></div>
+    <div class="door door-right"><div class="door-carving"></div></div>
+    <div class="door-light"></div>
     <div class="door-content">
+      <div class="opening-crown"><span></span><b>◆</b><span></span></div>
       <div class="seal">
         <p>The Wedding Of</p>
         <h1>Bhavini</h1>
-        <span>&</span>
+        <span>&amp;</span>
         <h1>Tanveer</h1>
       </div>
-      <p class="door-date">15 & 16 August 2026</p>
+      <p class="door-date">15 &amp; 16 August 2026</p>
       <label id="openBtn" for="doorToggle" role="button" tabindex="0">Open Invitation</label>
     </div>
   </section>
 
   <header>
-    <a class="brand" href="#home">B <span>&</span> T</a>
+    <a class="brand" href="#home">B <span>&amp;</span> T</a>
     <button id="menuBtn" class="menu-btn" aria-label="Open menu"><i></i><i></i></button>
     <nav id="nav">
       <a href="#home">Home</a>
@@ -44,146 +59,154 @@
   </header>
 
   <main id="site">
-    <section id="home" class="hero">
-      <img src="assets/ornament.svg" class="hero-ornament top-ornament" alt="">
-      <img src="assets/ornament.svg" class="hero-ornament bottom-ornament" alt="">
-      <div class="hero-frame"></div>
-      <div class="hero-content">
-        <div class="om">ॐ</div>
-        <p class="eyebrow">Together with their families</p>
+    <section id="home" class="hero reveal-section">
+      <div class="hero-light-rays"></div>
+      <div class="hero-foreground foreground-left"></div>
+      <div class="hero-foreground foreground-right"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-lantern lamp-1"></div>
+      <div class="hero-lantern lamp-2"></div>
+      <div class="hero-lantern lamp-3"></div>
+      <div class="hero-lantern lamp-4"></div>
+
+      <div class="hero-text hero-left">
+        <p>Together<br>with their families</p>
         <h2>Bhavini</h2>
-        <div class="name-rule"><span></span><b>&</b><span></span></div>
+        <span>&amp;</span>
         <h2>Tanveer</h2>
-        <p class="hero-copy">invite you to share in the joy of their wedding celebrations</p>
-        <p class="hero-date">15 · 16 August 2026</p>
-        <a class="outline-button invitation-toggle" id="invitationToggle" href="#invitationModal">Read the Invitation</a>
+        <small>invite you to celebrate their wedding</small>
+      </div>
+
+      <div class="hero-text hero-right">
+        <i></i>
+        <p>Two hearts<br>One promise<br>A lifetime of togetherness</p>
+        <i></i>
+      </div>
+
+      <a class="down-button" href="#invitation-intro" aria-label="Continue">⌄</a>
+    </section>
+
+    <section id="invitation-intro" class="invitation-intro reveal-section">
+      <img src="assets/floral-left.png" alt="" class="intro-floral intro-left">
+      <img src="assets/floral-right.png" alt="" class="intro-floral intro-right">
+      <div class="intro-frame"></div>
+      <div class="intro-content">
+        <p class="eyebrow dark">With joyful hearts</p>
+        <h2>We Invite You</h2>
+        <p>
+          to be part of our special day as we begin our beautiful journey together,
+          surrounded by love, blessings and cherished traditions.
+        </p>
+        <div class="wax-seal" aria-hidden="true"><span>B&amp;T</span></div>
+        <a id="invitationToggle" class="primary-button" href="#invitationModal">Read the Invitation</a>
       </div>
     </section>
 
-    <section id="events" class="events-section">
-      <div class="section-heading">
-        <p class="eyebrow dark">Two beautiful occasions</p>
-        <h3>Wedding Celebrations</h3>
-      </div>
+    <section id="events" class="events-section reveal-section">
+      <div class="section-title"><span></span><h2>Celebrate With Us</h2><span></span></div>
 
-      <div class="events">
-        <article class="event-card reception-card">
-          <div class="date-panel">
-            <span>Saturday</span>
-            <strong>15</strong>
-            <small>August 2026</small>
-          </div>
-          <div class="event-info">
-            <div class="event-corner"></div>
-            <p class="eyebrow dark">An evening of celebration</p>
-            <h4>Reception of Baraat</h4>
-            <div class="event-divider"></div>
+      <div class="event-grid">
+        <article class="event-card">
+          <img src="assets/event-left.png" alt="" class="event-art event-art-left">
+          <img src="assets/event-right.png" alt="" class="event-art event-art-right">
+          <div class="event-inner">
+            <div class="filigree filigree-top"></div>
+            <div class="filigree filigree-bottom"></div>
+            <div class="event-icon">✦</div>
+            <h3>Reception</h3>
+            <p class="weekday">Saturday</p>
+            <strong class="event-date">15</strong>
+            <p class="event-month">August 2026</p>
             <p class="event-time">7:30 PM onwards</p>
             <p class="event-place">Club Cabbana<br>Jalandhar–Phagwara Highway</p>
-            <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Club+Cabbana+Jalandhar+Phagwara+Highway" target="_blank" rel="noopener"><span class="map-icon">⌖</span><span>View Map</span></a>
+            <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Club+Cabbana+Jalandhar+Phagwara+Highway" target="_blank" rel="noopener"><span>⌖</span> View Map</a>
           </div>
         </article>
 
-        <article class="event-card anand-card">
-          <div class="date-panel">
-            <span>Sunday</span>
-            <strong>16</strong>
-            <small>August 2026</small>
-          </div>
-          <div class="event-info">
-            <div class="event-corner"></div>
-            <p class="eyebrow">The sacred union</p>
-            <h4>Anand Karaj</h4>
-            <div class="event-divider"></div>
+        <article class="event-card">
+          <img src="assets/event-left.png" alt="" class="event-art event-art-left">
+          <img src="assets/event-right.png" alt="" class="event-art event-art-right">
+          <div class="event-inner">
+            <div class="filigree filigree-top"></div>
+            <div class="filigree filigree-bottom"></div>
+            <div class="event-icon">ੴ</div>
+            <h3>Anand Karaj</h3>
+            <p class="weekday">Sunday</p>
+            <strong class="event-date">16</strong>
+            <p class="event-month">August 2026</p>
             <p class="event-time">11:00 AM</p>
             <p class="event-place">Gurudwara Bhai Ghaniya Ji Sewa Simran Kendar<br>Chahal Nagar, Phagwara</p>
-            <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Gurudwara+Bhai+Ghaniya+Ji+Sewa+Simran+Kendar+Chahal+Nagar+Phagwara" target="_blank" rel="noopener"><span class="map-icon">⌖</span><span>View Map</span></a>
+            <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Gurudwara+Bhai+Ghaniya+Ji+Sewa+Simran+Kendar+Chahal+Nagar+Phagwara" target="_blank" rel="noopener"><span>⌖</span> View Map</a>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="countdown" class="countdown-section">
-      <div class="section-heading light-heading">
-        <p class="eyebrow">Counting down to</p>
-        <h3>15 August 2026</h3>
-      </div>
-      <div class="countdown">
-        <div><strong id="days">00</strong><span>Days</span></div>
-        <div><strong id="hours">00</strong><span>Hours</span></div>
-        <div><strong id="minutes">00</strong><span>Minutes</span></div>
-        <div><strong id="seconds">00</strong><span>Seconds</span></div>
+    <section id="countdown" class="countdown-section reveal-section">
+      <div class="countdown-shade"></div>
+      <div class="countdown-shell">
+        <div class="section-title gold-title"><span></span><h2>Counting Down To Our Big Day</h2><span></span></div>
+        <div class="countdown">
+          <div><strong id="days">00</strong><span>Days</span></div>
+          <div><strong id="hours">00</strong><span>Hours</span></div>
+          <div><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
-      <p class="eyebrow">With warm regards</p>
-      <h3>Gautam Family</h3>
-      <p>We look forward to celebrating these joyous occasions with you.</p>
-      <div class="contacts">
-        <a href="tel:+917986503806">79865 03806</a>
-        <a href="tel:+919888433272">98884 33272</a>
+    <section id="contact" class="contact-section reveal-section">
+      <div class="contact-shade"></div>
+      <div class="contact-frame"></div>
+      <div class="contact-content">
+        <div class="monogram">B<span>&amp;</span>T</div>
+        <h2>We Can’t Wait To Celebrate With You!</h2>
+        <p>With warm regards — Gautam Family</p>
+        <div class="contacts">
+          <a href="tel:+917986503806">79865 03806</a>
+          <a href="tel:+919888433272">98884 33272</a>
+        </div>
       </div>
     </section>
   </main>
 
+  <footer class="finale">
+    <div class="finale-inner">
+      <div class="finale-ornament"></div>
+      <p>Thank You</p>
+      <h2>We Look Forward To Celebrating With You</h2>
+      <span>Bhavini &amp; Tanveer</span>
+    </div>
+  </footer>
 
   <div id="invitationModal" class="invitation-modal" aria-hidden="true">
-    <a class="modal-backdrop" href="#home" data-close-invitation aria-label="Close invitation"></a>
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="invitationTitle">
-      <a id="closeInvitation" class="modal-close" href="#home" aria-label="Close invitation">×</a>
-
-      <div class="modal-scroll">
-        <div class="modal-rod modal-rod-top"></div>
-        <div class="modal-paper">
-          <div class="modal-arch"></div>
-          <div class="modal-corner mc-tl"></div>
-          <div class="modal-corner mc-tr"></div>
-          <div class="modal-corner mc-bl"></div>
-          <div class="modal-corner mc-br"></div>
-
-          <div class="modal-content">
-            <div class="om dark-om">ॐ</div>
-            <p class="eyebrow dark">With the blessings of</p>
-            <h3 id="invitationTitle">
-              Late Sh. K.D. Sharma<br>
-              <span>&amp;</span><br>
-              Smt. Chanchal Sharma
-            </h3>
-            <div class="divider"><b>◆</b></div>
-            <p class="modal-copy">
-              <strong>Sh. Ajay Gautam &amp; Smt. Poonam Sharma</strong><br>
-              solicit the honour of your gracious presence<br>
-              at the wedding celebration of their beloved daughter
-            </p>
-            <div class="modal-couple">
-              <strong>Bhavini</strong>
-              <small>with</small>
-              <strong>Tanveer</strong>
-            </div>
-            <p class="modal-groom-names">
-              Sd. Maninder Singh &amp; Sdn. Kamalpreet Kaur
-            </p>
-          </div>
+    <a class="modal-backdrop" href="#home" aria-label="Close invitation"></a>
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <a class="modal-close" href="#home" aria-label="Close invitation">×</a>
+      <div class="scroll-rod"></div>
+      <div class="scroll-paper">
+        <div class="scroll-arch"></div>
+        <div class="scroll-content">
+          <div class="scroll-wax"><span>B&amp;T</span></div>
+          <div class="om">ॐ</div>
+          <p class="eyebrow dark">With the blessings of</p>
+          <h3>Late Sh. K.D. Sharma<br><span>&amp;</span><br>Smt. Chanchal Sharma</h3>
+          <div class="divider"><b>◆</b></div>
+          <p><strong>Sh. Ajay Gautam &amp; Smt. Poonam Sharma</strong><br>solicit the honour of your gracious presence<br>at the wedding celebration of their beloved daughter</p>
+          <div class="modal-couple"><strong>Bhavini</strong><small>with</small><strong>Tanveer</strong></div>
+          <p class="groom-names">Sd. Maninder Singh &amp; Sdn. Kamalpreet Kaur</p>
         </div>
-        <div class="modal-rod modal-rod-bottom"></div>
       </div>
+      <div class="scroll-rod"></div>
     </div>
   </div>
-
-  <footer>
-    <strong>B <span>&</span> T</strong>
-    <p>Bhavini with Tanveer</p>
-  </footer>
 
   <div class="music-player">
     <button id="musicBtn" aria-label="Play or pause music">♪</button>
     <div><strong>Background Music</strong><span id="musicLabel">Tap to play</span></div>
   </div>
 
-  <audio id="music" loop preload="auto">
-    <source src="assets/music.wav?v=80" type="audio/wav">
-  </audio>
-  <script src="script.js?v=80"></script>
+  <audio id="music" loop preload="auto"><source src="assets/music.wav?v=300" type="audio/wav"></audio>
+  <script src="script.js?v=300"></script>
 </body>
 </html>

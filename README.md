@@ -1,17 +1,22 @@
-# Cinematic Final v8 — Guaranteed Opening
+# Bhavini & Tanveer — Cinematic Final
 
-I removed JavaScript as a dependency for the Open Invitation action.
+This version implements the full cinematic upgrade:
 
-The Open Invitation control is now a CSS-powered label connected to a hidden
-checkbox. The doors split and the website appears even when JavaScript is
-blocked, delayed, cached incorrectly, or throws an error.
+- CSS-only split-door opening remains reliable
+- Golden light rays through the doors
+- Petal burst synchronized with opening
+- Larger falling petals, gold dust and floating bokeh
+- Moving foreground floral layers and subtle parallax
+- Ground fog and layered architectural depth
+- Luxury filigree, carved borders and wax seals
+- Event cards with depth, hover movement and embossed styling
+- Scroll invitation unroll animation
+- Lantern glow/flicker
+- Cinematic section reveal transitions
+- Fully redesigned thank-you finale
+- Responsive phone, tablet and desktop layouts
+- Reduced-motion accessibility support
+- Music, countdown, map links and invitation modal retained
 
-JavaScript is now used only for optional enhancements:
-- starting music,
-- mobile navigation,
-- countdown,
-- petals and gold dust,
-- modal body-scroll locking.
-
-Replace every repository file and the complete assets folder.
-After deployment, open the site once with `?v=80`.
+Upload every file and the complete assets folder to the repository root.
+After deployment, open the site once with `?v=300`.
