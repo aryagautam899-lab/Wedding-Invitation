@@ -1067,3 +1067,30 @@ body.opening-locked {
   }
 }
 \n\n/* ==========================================================\n   v5 — GROOM PARENTS VISIBILITY + MATCHED TYPOGRAPHY\n   No other visual sections changed.\n   ========================================================== */\n\n/* The invitation content uses a compact vertical flow so the\n   final parents line always remains above the bottom roller. */\n.paper-content {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: flex-start;\n  height: 100%;\n  min-height: 0 !important;\n  padding: 42px clamp(18px, 4vw, 46px) 74px !important;\n}\n\n.paper-content > p:not(.scroll-heading):not(.groom-parent) {\n  margin-top: 6px;\n  margin-bottom: 6px;\n}\n\n.paper-content h3 {\n  margin: 4px 0 6px;\n}\n\n.divider {\n  margin: 8px 0 !important;\n}\n\n.couple {\n  margin: 8px 0 2px !important;\n  gap: 0 !important;\n}\n\n.couple strong {\n  font-size: clamp(3.9rem, 7vw, 5.45rem) !important;\n  line-height: .92 !important;\n}\n\n.couple small {\n  margin: 1px 0 2px;\n}\n\n/* Exact same family, weight and visual emphasis as the bride's parents. */\n.groom-parent {\n  display: block !important;\n  flex: 0 0 auto;\n  width: min(100%, 780px) !important;\n  margin: 8px auto 0 !important;\n  padding: 8px 8px 0 !important;\n  border-top: 1px solid rgba(185,141,50,.35);\n  color: var(--ink);\n  font: 1.1rem/1.45 \"Cormorant Garamond\", serif !important;\n  white-space: normal !important;\n  overflow: visible !important;\n  overflow-wrap: normal !important;\n}\n\n.groom-parent strong {\n  font-family: \"Cormorant Garamond\", serif !important;\n  font-size: inherit !important;\n  font-weight: 700 !important;\n  line-height: inherit !important;\n}\n\n/* Give the parchment enough actual visible height instead of only\n   increasing an internal min-height that remained clipped. */\n@media (min-width: 1100px) {\n  .scroll-window.open .paper { height: 690px !important; }\n  .paper-content { padding-top: 38px !important; padding-bottom: 76px !important; }\n}\n\n@media (min-width: 900px) and (max-width: 1099px) {\n  .scroll-window.open .paper { height: 710px !important; }\n  .paper-content { padding-top: 38px !important; padding-bottom: 78px !important; }\n}\n\n@media (min-width: 701px) and (max-width: 899px) {\n  .scroll-window.open .paper { height: 730px !important; }\n  .paper-content { padding-top: 38px !important; padding-bottom: 82px !important; }\n  .couple strong { font-size: clamp(3.8rem, 8.5vw, 5rem) !important; }\n}\n\n@media (max-width: 700px) {\n  .scroll-window.open .paper { height: 760px !important; }\n  .paper-content { padding: 38px 16px 88px !important; }\n  .groom-parent { font-size: 1rem !important; }\n  .couple strong { font-size: clamp(3.4rem, 15vw, 4.75rem) !important; }\n}\n\n@media (max-width: 480px) {\n  .scroll-window.open .paper { height: 790px !important; }\n  .paper-content { padding: 34px 12px 92px !important; }\n  .groom-parent { font-size: .94rem !important; }\n}\n\n@media (max-width: 340px) {\n  .scroll-window.open .paper { height: 820px !important; }\n  .paper-content { padding-bottom: 98px !important; }\n  .groom-parent { font-size: .9rem !important; }\n}\n
+
+/* v6 — Light Golden Palace background refinement only */
+.hero {
+  background-position: center 42%;
+}
+
+.countdown-section {
+  background-position: center 46%;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    background-position: 58% 34%;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    background-position: 60% 30%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    background-position: 61% 28%;
+  }
+}

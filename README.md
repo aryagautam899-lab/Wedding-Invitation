@@ -1,11 +1,20 @@
-# Bhavini & Tanveer — v5 Parents Fix
+# Bhavini & Tanveer — Light Golden Palace Final
 
-Only the invitation scroll was corrected:
+This version keeps the completed website unchanged and replaces only the palace artwork.
 
-- groom’s parents are now directly below Tanveer
-- groom’s parents use the same Cormorant Garamond font and bold weight as Sh. Ajay Gautam & Smt. Poonam Sharma
-- the open parchment itself is taller on desktop, laptop, tablet and mobile
-- reserved space above the bottom roller prevents the line from being covered
-- every other design and feature remains unchanged
+Included:
+- new taller light-golden palace hero
+- matching clean countdown background
+- split-door opening
+- clear Ganesha artwork
+- invitation scroll with rolling open/close
+- groom's parents line fully visible and bold
+- Reception of Baraat — 15 August
+- Anand Karaj — 16 August
+- live countdown
+- Gautam Family footer
+- floating click-to-call number boxes
+- responsive layouts for phones, tablets, laptops and desktops
 
-Upload all files and the full assets folder. After deployment, open once with `?v=940` or hard refresh.
+Upload every file and the complete assets folder to your repository root.
+After deployment, open once with `?v=960` or hard refresh.
