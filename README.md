@@ -1,21 +1,15 @@
-# Updated Wedding Invitation Website
+# Actually Fixed Version
 
-Changes:
-- First contact number changed to 7986503806
-- Generated invitation card added as a full responsive section
-- New pleasant background instrumental included
-- RSVP and attendance features removed
-- No use of the word “royal”
-- Existing lightweight, optimized layout retained
+The previous package had mismatched HTML class names and a broken JavaScript file, which caused the opening screen to collapse and the site to stop responding.
 
-Upload all files and the assets folder to the root of the GitHub repository, replacing the current files.
+This version fixes:
+- Opening screen full-screen layout
+- Correct CSS class names
+- Working Open Invitation button
+- Working navigation
+- Working countdown
+- Working invitation button
+- Correct WAV audio type
+- Browser cache-busting with versioned file URLs
 
-
-## Opening-screen fix
-
-This version forces the opening invitation to cover the full browser window.
-The CSS and JavaScript files also use version parameters so phones and PCs do not keep loading an older cached copy.
-
-After uploading, wait for GitHub Pages to deploy and perform a hard refresh:
-- PC: Ctrl + Shift + R
-- iPhone/Safari: close the tab and reopen the website
+Upload every file and the assets folder over the existing GitHub repository files, then commit.

@@ -2429,146 +2429,54 @@ img {
 }
 
 
-/* =====================================================
-   ENTRY SCREEN FIX — must remain at the end of this file
-   ===================================================== */
-
-html, body {
-  min-height: 100%;
-}
-
-body.locked {
-  overflow: hidden !important;
-}
-
-#royalGate,
-.royal-gate {
+/* Final opening-screen correction */
+#royalGate.royal-gate {
   position: fixed !important;
   inset: 0 !important;
   width: 100vw !important;
   height: 100svh !important;
   min-height: 100vh !important;
-  z-index: 99999 !important;
+  z-index: 10000 !important;
   display: grid !important;
   place-items: center !important;
   overflow: hidden !important;
-  background: #06271f !important;
 }
 
-#royalGate.opened,
-.royal-gate.opened {
+#royalGate .gate-centre {
+  position: relative !important;
+  z-index: 3 !important;
+  width: min(92vw, 520px) !important;
+  text-align: center !important;
+}
+
+#royalGate .royal-seal {
+  width: min(78vw, 390px) !important;
+  aspect-ratio: 1 !important;
+  margin: 0 auto !important;
+}
+
+#royalGate .seal-small {
+  margin-bottom: 18px !important;
+}
+
+#royalGate .royal-seal strong {
+  line-height: 1.08 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+#royalGate.opened {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
 }
 
-.gate-panel {
-  position: absolute !important;
-  top: 0 !important;
-  bottom: 0 !important;
-  width: 50.1% !important;
-  height: 100% !important;
-  background: #0b4737 !important;
-}
-
-.gate-left {
-  left: 0 !important;
-}
-
-.gate-right {
-  right: 0 !important;
-}
-
-.gate-centre {
-  position: relative !important;
-  z-index: 4 !important;
-  width: min(92vw, 520px) !important;
-  max-width: 520px !important;
-  padding: 28px 20px !important;
-  text-align: center !important;
-}
-
-.royal-seal {
-  width: min(78vw, 390px) !important;
-  max-width: 390px !important;
-  aspect-ratio: 1 / 1 !important;
-  margin: 0 auto !important;
-  border-radius: 50% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  border: 1px solid #d9c17e !important;
-  background: #05231b !important;
-}
-
-.seal-small {
-  display: block !important;
-  margin-bottom: 18px !important;
-  color: #e8d69e !important;
-  text-transform: uppercase !important;
-  letter-spacing: .22em !important;
-  font-size: .68rem !important;
-  line-height: 1.4 !important;
-}
-
-.royal-seal strong {
-  display: block !important;
-  margin: 0 !important;
-  font-family: "Great Vibes", cursive !important;
-  font-size: clamp(3.8rem, 10vw, 5.8rem) !important;
-  font-weight: 400 !important;
-  line-height: 1.06 !important;
-  color: #fff8e8 !important;
-  white-space: nowrap !important;
-}
-
-.seal-amp {
-  display: block !important;
-  margin: 4px 0 !important;
-  color: #d9c17e !important;
-  font-family: "Cormorant Garamond", serif !important;
-  font-size: 1.7rem !important;
-}
-
-.gate-date {
-  margin: 24px 0 20px !important;
-  color: #e8d69e !important;
-  text-transform: uppercase !important;
-  letter-spacing: .22em !important;
-  font-size: .7rem !important;
-}
-
-#openInvitation,
-.gold-button {
-  min-width: 190px !important;
-  min-height: 50px !important;
-  padding: 13px 24px !important;
-  border-radius: 999px !important;
-  border: 1px solid #c8a558 !important;
-  background: linear-gradient(135deg, #d9bd75, #b98b38) !important;
-  color: #14251e !important;
-  font-weight: 700 !important;
-  cursor: pointer !important;
-}
-
-.gate-hint {
-  margin-top: 14px !important;
-  color: rgba(255,255,255,.62) !important;
-  font-size: .74rem !important;
-}
-
 @media (max-width: 600px) {
-  .gate-centre {
-    width: 100% !important;
-    padding: 18px !important;
-  }
-
-  .royal-seal {
+  #royalGate .royal-seal {
     width: min(82vw, 350px) !important;
   }
 
-  .royal-seal strong {
-    font-size: clamp(3.4rem, 17vw, 5rem) !important;
+  #royalGate .royal-seal strong {
+    font-size: clamp(3.5rem, 17vw, 5rem) !important;
   }
 }

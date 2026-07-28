@@ -1,148 +1,108 @@
 const body = document.body;
+const gate = document.getElementById("royalGate");
+const openButton = document.getElementById("openInvitation");
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicToggle");
+const musicPlayer = document.getElementById("musicPlayer");
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.getElementById("navMenu");
+const scrollButton = document.getElementById("openScroll");
+const invitationScroll = document.getElementById("invitationScroll");
 
+if (openButton && gate) {
+  openButton.addEventListener("click", async () => {
+    gate.classList.add("opened");
+    body.classList.remove("is-locked");
 
-openButton.addEventListener("click", async () => {
-  gate.classList.add("opened");
-  body.classList.remove("is-locked");
-
-  try {
-    await music.play();
-    musicButton.classList.add("is-playing");
-    musicButton.querySelector(".music-icon").textContent = "♫";
-  } catch {
-    // The website still works without a music file.
-  }
-
-  setTimeout(() => gate.remove(), 350);
-});
-
-musicButton.addEventListener("click", async () => {
-  if (music.paused) {
     try {
-      await music.play();
-      musicButton.classList.add("is-playing");
-      musicButton.querySelector(".music-icon").textContent = "♫";
+      if (music) {
+        await music.play();
+        musicButton?.classList.add("is-playing");
+        musicPlayer?.classList.add("playing");
+        const icon = musicButton?.querySelector(".music-icon");
+        if (icon) icon.textContent = "♫";
+      }
     } catch {
-      alert("Add your song as assets/music.mp3 first.");
+      // Music can still be started manually.
     }
-  } else {
-    music.pause();
-    musicButton.classList.remove("is-playing");
-    musicButton.querySelector(".music-icon").textContent = "♪";
-  }
-});
 
-navToggle.addEventListener("click", () => {
-  const isOpen = navMenu.classList.toggle("open");
-  navToggle.setAttribute("aria-expanded", String(isOpen));
-});
-navMenu.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("open");
-    navToggle.setAttribute("aria-expanded", "false");
+    setTimeout(() => gate.remove(), 450);
   });
-});
+}
+
+if (musicButton && music) {
+  musicButton.addEventListener("click", async () => {
+    if (music.paused) {
+      try {
+        await music.play();
+        musicButton.classList.add("is-playing");
+        musicPlayer?.classList.add("playing");
+        const icon = musicButton.querySelector(".music-icon");
+        if (icon) icon.textContent = "♫";
+      } catch {
+        alert("The browser blocked audio. Tap the music button once more.");
+      }
+    } else {
+      music.pause();
+      musicButton.classList.remove("is-playing");
+      musicPlayer?.classList.remove("playing");
+      const icon = musicButton.querySelector(".music-icon");
+      if (icon) icon.textContent = "♪";
+    }
+  });
+}
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    const open = navMenu.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", String(open));
+  });
+
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+if (scrollButton && invitationScroll) {
+  scrollButton.addEventListener("click", () => {
+    const open = invitationScroll.classList.toggle("open");
+    scrollButton.textContent = open ? "Close the Invitation" : "Read the Invitation";
+  });
+}
 
 const target = new Date("2026-08-15T19:30:00+05:30").getTime();
 
 function updateCountdown() {
+  const countdown = document.getElementById("countdown");
+  if (!countdown) return;
+
   const remaining = target - Date.now();
 
   if (remaining <= 0) {
-    document.getElementById("countdown").innerHTML =
+    countdown.innerHTML =
       '<div class="count-box" style="min-width:min(90vw,620px)"><strong>Welcome</strong><span>It is celebration time</span></div>';
     return;
   }
 
-  const days = Math.floor(remaining / 86400000);
-  const hours = Math.floor((remaining % 86400000) / 3600000);
-  const minutes = Math.floor((remaining % 3600000) / 60000);
-  const seconds = Math.floor((remaining % 60000) / 1000);
+  const values = {
+    days: Math.floor(remaining / 86400000),
+    hours: Math.floor((remaining % 86400000) / 3600000),
+    minutes: Math.floor((remaining % 3600000) / 60000),
+    seconds: Math.floor((remaining % 60000) / 1000)
+  };
 
-  document.getElementById("days").textContent = String(days).padStart(2, "0");
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  for (const [id, value] of Object.entries(values)) {
+    const element = document.getElementById(id);
+    if (element) element.textContent = String(value).padStart(2, "0");
+  }
 }
+
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
-
-
-
-
-
-
-
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
-const closeLightbox = document.getElementById("closeLightbox");
-
-document.querySelectorAll(".gallery-tile").forEach(tile => {
-  tile.addEventListener("click", () => {
-    const img = tile.querySelector("img");
-    if (!img || img.style.display === "none" || !img.complete || img.naturalWidth === 0) return;
-
-    lightboxImage.src = tile.dataset.image;
-    lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden", "false");
-  });
+document.querySelectorAll(".reveal").forEach(element => {
+  element.classList.add("visible");
 });
-
-function closeGallery() {
-  lightbox.classList.remove("open");
-  lightbox.setAttribute("aria-hidden", "true");
-}
-closeLightbox.addEventListener("click", closeGallery);
-lightbox.addEventListener("click", event => {
-  if (event.target === lightbox) closeGallery();
-});
-document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closeGallery();
-});
-
-
-// Royal scroll invitation
-const scrollButton = document.getElementById("openScroll");
-const invitationScroll = document.getElementById("invitationScroll");
-if (scrollButton && invitationScroll) {
-  scrollButton.addEventListener("click", () => {
-    const open = invitationScroll.classList.toggle("open");
-    scrollButton.textContent = open ? "Close the Royal Invitation" : "Read the Royal Invitation";
-  });
-}
-
-// Upgrade music player state
-const musicPlayer = document.getElementById("musicPlayer");
-if (music && musicPlayer) {
-  music.addEventListener("play", () => musicPlayer.classList.add("playing"));
-  music.addEventListener("pause", () => musicPlayer.classList.remove("playing"));
-}
-
-// Floating blessing message
-const blessingToast = document.getElementById("blessingToast");
-if (blessingToast) {
-  setTimeout(() => {
-    blessingToast.classList.add("show");
-    setTimeout(() => blessingToast.classList.remove("show"), 5000);
-  }, 9000);
-}
-
-// Natural sparkles and finale celebration
-const finale = document.getElementById("finale");
-// Heavy finale particle burst removed for smoother performance.
-
-// Improve petal variety
-const originalCreatePetal = createPetal;
-createPetal = function() {
-  const petal = document.createElement("span");
-  petal.className = "petal";
-  petal.style.left = `${Math.random() * 100}vw`;
-  petal.style.animationDuration = `${8 + Math.random() * 8}s`;
-  petal.style.setProperty("--drift", `${(Math.random() - .5) * 260}px`);
-  petal.style.setProperty("--scale", `${.45 + Math.random() * 1.15}`);
-  petal.style.opacity = `${.18 + Math.random() * .55}`;
-  layer.appendChild(petal);
-  setTimeout(() => petal.remove(), 17000);
-};
