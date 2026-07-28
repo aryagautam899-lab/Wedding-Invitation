@@ -1,19 +1,17 @@
-# Bhavini & Tanveer — Correct Final Version
+# Bhavini & Tanveer — Wide Palace Corrected
 
-Built directly from the uploaded project files.
+Built from the actual GitHub repository ZIP.
 
 Fixes:
-- uses the exact uploaded palace image
-- uses the exact uploaded Ganesha image
-- uses the exact uploaded music file
-- removes duplicate/embedded palace styles
-- right side stays bright and transparent
-- left invitation panel is more transparent
-- all existing features are preserved
+- replaced the blurred-side palace with a true widescreen palace
+- removed the dark/frosted block on the right
+- made the left invitation card more transparent
+- preserved split opening, invitation scroll, events, countdown, music and responsive layout
+- final changes are isolated in `final-hero-fix-1200.css`
 
 Deployment:
-1. Delete the old repository files.
-2. Upload everything inside this folder to the repository root.
-3. Upload the complete assets folder.
-4. Confirm index.html links to style.css?v=1100.
-5. Open the deployed site with ?v=1100 or hard refresh.
+1. Delete the existing repository files.
+2. Upload everything from this package.
+3. Keep the entire `assets` folder.
+4. Confirm `final-hero-fix-1200.css` is in the repository root.
+5. Open the deployed site once with `?v=1200`.
