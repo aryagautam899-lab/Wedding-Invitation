@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=300">
+  <link rel="stylesheet" href="style.css?v=401">
 </head>
 <body class="locked">
   <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
@@ -48,7 +48,7 @@
   </section>
 
   <header>
-    <a class="brand" href="#home">B <span>&amp;</span> T</a>
+    <a class="brand brand-straight" href="#home"><b>B</b><span>&amp;</span><b>T</b></a>
     <button id="menuBtn" class="menu-btn" aria-label="Open menu"><i></i><i></i></button>
     <nav id="nav">
       <a href="#home">Home</a>
@@ -60,29 +60,22 @@
 
   <main id="site">
     <section id="home" class="hero reveal-section">
-      <div class="hero-light-rays"></div>
-      <div class="hero-foreground foreground-left"></div>
-      <div class="hero-foreground foreground-right"></div>
       <div class="hero-overlay"></div>
-      <div class="hero-lantern lamp-1"></div>
-      <div class="hero-lantern lamp-2"></div>
-      <div class="hero-lantern lamp-3"></div>
-      <div class="hero-lantern lamp-4"></div>
-
-      <div class="hero-text hero-left">
-        <p>Together<br>with their families</p>
+      <div class="hero-palace-glow"></div>
+      <img src="assets/lantern.svg" class="hero-lantern-img hl-1" alt="">
+      <img src="assets/lantern.svg" class="hero-lantern-img hl-2" alt="">
+      <img src="assets/lantern.svg" class="hero-lantern-img hl-3" alt="">
+      <img src="assets/lantern.svg" class="hero-lantern-img hl-4" alt="">
+      <div class="hero-copy-panel">
+        <img src="assets/ganesha-line.svg" class="ganesha-mark" alt="Lord Ganesha">
+        <p class="ganesh-line">॥ Shree Ganeshaya Namah ॥</p>
+        <p class="hero-family">Together with their families</p>
         <h2>Bhavini</h2>
-        <span>&amp;</span>
+        <div class="hero-and"><span></span><b>&amp;</b><span></span></div>
         <h2>Tanveer</h2>
-        <small>invite you to celebrate their wedding</small>
+        <p class="hero-invite">invite you to celebrate their wedding</p>
+        <a class="hero-open-button" href="#invitation-intro">Open Invitation</a>
       </div>
-
-      <div class="hero-text hero-right">
-        <i></i>
-        <p>Two hearts<br>One promise<br>A lifetime of togetherness</p>
-        <i></i>
-      </div>
-
       <a class="down-button" href="#invitation-intro" aria-label="Continue">⌄</a>
     </section>
 
@@ -104,39 +97,39 @@
 
     <section id="events" class="events-section reveal-section">
       <div class="section-title"><span></span><h2>Celebrate With Us</h2><span></span></div>
-
-      <div class="event-grid">
-        <article class="event-card">
-          <img src="assets/event-left.png" alt="" class="event-art event-art-left">
-          <img src="assets/event-right.png" alt="" class="event-art event-art-right">
+      <div class="event-grid clean-event-grid">
+        <article class="event-card clean-event-card">
+          <img src="assets/lantern.svg" class="event-lantern event-lantern-left" alt="">
+          <img src="assets/lantern.svg" class="event-lantern event-lantern-right" alt="">
           <div class="event-inner">
-            <div class="filigree filigree-top"></div>
-            <div class="filigree filigree-bottom"></div>
+            <img src="assets/filigree.svg" class="event-filigree top-filigree" alt="">
             <div class="event-icon">✦</div>
-            <h3>Reception</h3>
+            <h3>Reception<br>of Baraat</h3>
             <p class="weekday">Saturday</p>
             <strong class="event-date">15</strong>
             <p class="event-month">August 2026</p>
+            <div class="gold-rule"></div>
             <p class="event-time">7:30 PM onwards</p>
             <p class="event-place">Club Cabbana<br>Jalandhar–Phagwara Highway</p>
             <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Club+Cabbana+Jalandhar+Phagwara+Highway" target="_blank" rel="noopener"><span>⌖</span> View Map</a>
+            <img src="assets/filigree.svg" class="event-filigree bottom-filigree" alt="">
           </div>
         </article>
-
-        <article class="event-card">
-          <img src="assets/event-left.png" alt="" class="event-art event-art-left">
-          <img src="assets/event-right.png" alt="" class="event-art event-art-right">
+        <article class="event-card clean-event-card">
+          <img src="assets/lantern.svg" class="event-lantern event-lantern-left" alt="">
+          <img src="assets/lantern.svg" class="event-lantern event-lantern-right" alt="">
           <div class="event-inner">
-            <div class="filigree filigree-top"></div>
-            <div class="filigree filigree-bottom"></div>
+            <img src="assets/filigree.svg" class="event-filigree top-filigree" alt="">
             <div class="event-icon">ੴ</div>
             <h3>Anand Karaj</h3>
             <p class="weekday">Sunday</p>
             <strong class="event-date">16</strong>
             <p class="event-month">August 2026</p>
+            <div class="gold-rule"></div>
             <p class="event-time">11:00 AM</p>
             <p class="event-place">Gurudwara Bhai Ghaniya Ji Sewa Simran Kendar<br>Chahal Nagar, Phagwara</p>
             <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Gurudwara+Bhai+Ghaniya+Ji+Sewa+Simran+Kendar+Chahal+Nagar+Phagwara" target="_blank" rel="noopener"><span>⌖</span> View Map</a>
+            <img src="assets/filigree.svg" class="event-filigree bottom-filigree" alt="">
           </div>
         </article>
       </div>
@@ -144,8 +137,8 @@
 
     <section id="countdown" class="countdown-section reveal-section">
       <div class="countdown-shade"></div>
-      <div class="countdown-shell">
-        <div class="section-title gold-title"><span></span><h2>Counting Down To Our Big Day</h2><span></span></div>
+      <div class="countdown-shell clean-countdown-shell">
+        <div class="section-title gold-title"><span></span><h2>Countdown To Our Big Day</h2><span></span></div>
         <div class="countdown">
           <div><strong id="days">00</strong><span>Days</span></div>
           <div><strong id="hours">00</strong><span>Hours</span></div>
@@ -159,7 +152,7 @@
       <div class="contact-shade"></div>
       <div class="contact-frame"></div>
       <div class="contact-content">
-        <div class="monogram">B<span>&amp;</span>T</div>
+        <div class="monogram monogram-straight"><b>B</b><span>&amp;</span><b>T</b></div>
         <h2>We Can’t Wait To Celebrate With You!</h2>
         <p>With warm regards — Gautam Family</p>
         <div class="contacts">
@@ -206,7 +199,7 @@
     <div><strong>Background Music</strong><span id="musicLabel">Tap to play</span></div>
   </div>
 
-  <audio id="music" loop preload="auto"><source src="assets/music.wav?v=300" type="audio/wav"></audio>
-  <script src="script.js?v=300"></script>
+  <audio id="music" loop preload="auto"><source src="assets/music.wav?v=401" type="audio/wav"></audio>
+  <script src="script.js?v=401"></script>
 </body>
 </html>
