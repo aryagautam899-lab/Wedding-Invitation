@@ -1,17 +1,20 @@
-# Bhavini & Tanveer — Final Palace Website
+# Bhavini & Tanveer — Final Palace Website v2
 
-Includes:
-- darker palace background for readability
-- clear Ganesha line art
-- tap-to-open invitation scroll
-- rolling close animation and X close button
-- Reception of Baraat on 15 August
-- Anand Karaj on 16 August
-- clean countdown with no hidden background text
-- Gautam Family footer
-- floating click-to-call phone boxes
-- background music, falling petals and gold particles
-- responsive mobile, tablet and desktop layouts
+Fixes in this version:
+- replaced the broken SVG Ganesha with a real transparent PNG
+- sharper and clearer Ganesha artwork
+- responsive optimisation for:
+  - small phones
+  - standard phones
+  - tablets
+  - laptops
+  - desktops
+  - large monitors
+  - landscape devices
+- improved text scaling and section spacing
+- prevented cropping, overlap and horizontal overflow
+- improved mobile scroll-card dimensions
+- improved touch targets and mobile navigation
 
-Upload all files and the full assets folder to your GitHub repository root.
-After deployment, open once with ?v=900 or hard refresh.
+Upload every file and the complete assets folder to your GitHub repository root.
+After deployment, open the website once with `?v=910` or do a hard refresh.

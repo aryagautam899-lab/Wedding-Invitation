@@ -11,3 +11,500 @@ header{position:sticky;top:0;z-index:100;height:68px;display:flex;align-items:ce
 @media(max-width:700px){nav{display:none;position:absolute;top:68px;left:0;right:0;padding:22px;flex-direction:column;background:var(--deep)}nav.open{display:flex}.menu{display:block}.countdown{grid-template-columns:repeat(2,1fr)}.paper{margin-inline:18px}.rod{margin-inline:6px}.scroll-window.open .paper{height:690px}.paper-content{min-height:690px;padding:52px 20px}.side-lantern{display:none}.music div{display:none}.music{padding:6px}}
 @media(max-width:480px){.hero-copy h1{font-size:2.8rem}.ganesha{width:86px}.event-card{padding-inline:20px}.contact-boxes a{min-width:240px}.scroll-heading{font-size:1.6rem}}
 @media(prefers-reduced-motion:reduce){.particles{display:none}.contact-boxes a{animation:none}}
+
+/* ==========================================================
+   v2 — CLEAR GANESHA + COMPLETE RESPONSIVE OPTIMISATION
+   ========================================================== */
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  min-width: 280px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ganesha {
+  width: clamp(96px, 8.2vw, 142px);
+  max-height: 132px;
+  object-fit: contain;
+  object-position: center;
+  filter:
+    drop-shadow(0 0 7px rgba(226,189,99,.42))
+    drop-shadow(0 7px 14px rgba(0,0,0,.3));
+}
+
+.hero {
+  min-height: max(680px, calc(100svh - 68px));
+  background-position: center center;
+}
+
+.hero-copy {
+  width: clamp(310px, 31vw, 455px);
+  padding: clamp(18px, 2.2vw, 30px);
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.65rem, 4.3vw, 5rem);
+}
+
+.hero-quote {
+  width: clamp(220px, 18vw, 295px);
+  font-size: clamp(.98rem, 1.25vw, 1.25rem);
+}
+
+.scroll-window {
+  width: min(100%, 1080px);
+}
+
+.scroll-shell {
+  width: 100%;
+}
+
+.paper {
+  margin-inline: clamp(18px, 5vw, 54px);
+}
+
+.paper-content {
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+
+.event-card {
+  width: 100%;
+}
+
+.countdown {
+  width: min(100%, 880px);
+}
+
+.countdown div {
+  min-width: 0;
+}
+
+.contact-boxes a,
+.primary,
+.map-button,
+.scroll-prompt {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (min-width: 1600px) {
+  .hero-copy {
+    left: max(6vw, 90px);
+  }
+
+  .hero-quote {
+    right: max(7vw, 100px);
+  }
+
+  .hero {
+    background-size: cover;
+  }
+
+  .events,
+  .countdown-section,
+  .finale {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}
+
+@media (max-width: 1180px) {
+  nav {
+    gap: 18px;
+  }
+
+  .hero-copy {
+    left: 4%;
+  }
+
+  .hero-quote {
+    right: 4%;
+  }
+
+  .event-grid {
+    gap: 22px;
+  }
+
+  .event-card {
+    padding-inline: 24px;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero {
+    min-height: 920px;
+    background-position: 58% top;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2,14,11,.82) 0 42%,
+        rgba(2,14,11,.18) 58%,
+        rgba(2,14,11,.52) 100%
+      );
+  }
+
+  .hero-copy {
+    left: 50%;
+    top: 29%;
+    width: min(88vw, 470px);
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-quote {
+    display: none;
+  }
+
+  .hl2,
+  .hr1 {
+    display: none;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card {
+    max-width: 690px;
+    margin-inline: auto;
+  }
+
+  .countdown {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 760px) {
+  header {
+    height: 64px;
+    padding-inline: 18px;
+  }
+
+  html {
+    scroll-padding-top: 64px;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    z-index: 101;
+    padding: 20px;
+    flex-direction: column;
+    gap: 16px;
+    background: rgba(3,26,20,.99);
+    border-bottom: 1px solid rgba(224,189,99,.2);
+  }
+
+  nav.open {
+    display: flex;
+  }
+
+  .menu {
+    display: block;
+    padding: 8px;
+  }
+
+  .hero {
+    min-height: 840px;
+    background-position: 59% top;
+  }
+
+  .hero-copy {
+    top: 31%;
+    width: min(90vw, 440px);
+    padding: 18px;
+  }
+
+  .ganesha {
+    width: 104px;
+    max-height: 100px;
+  }
+
+  .ganesh-line,
+  .smallcaps {
+    font-size: .64rem;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.45rem, 11vw, 3.8rem);
+  }
+
+  .lantern {
+    width: 43px;
+    height: 102px;
+  }
+
+  .scroll-section {
+    min-height: 720px;
+    padding: 72px 10px;
+  }
+
+  .side-lantern {
+    display: none;
+  }
+
+  .scroll-close {
+    right: 8px;
+    top: 54px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .rod {
+    height: 23px;
+    margin-inline: 4px;
+  }
+
+  .paper {
+    margin-inline: 12px;
+  }
+
+  .scroll-window.open .paper {
+    height: 680px;
+  }
+
+  .paper-content {
+    min-height: 680px;
+    padding: 48px 18px;
+  }
+
+  .couple strong {
+    font-size: clamp(3.6rem, 17vw, 5.4rem);
+  }
+
+  .events,
+  .countdown-section {
+    padding: 72px 14px;
+  }
+
+  .section-title {
+    gap: 9px;
+  }
+
+  .section-title h2 {
+    font-size: clamp(1.55rem, 7.5vw, 2.4rem);
+  }
+
+  .section-title span {
+    width: 12vw;
+  }
+
+  .event-card {
+    min-height: 535px;
+    padding: 66px 18px 38px;
+  }
+
+  .event-card h3 {
+    font-size: clamp(1.65rem, 7vw, 2.45rem);
+  }
+
+  .card-lantern {
+    width: 36px;
+    height: 88px;
+  }
+
+  .corner {
+    width: 92px;
+    height: 92px;
+  }
+
+  .countdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 520px;
+  }
+
+  .countdown div {
+    width: 100%;
+  }
+
+  .countdown strong {
+    font-size: clamp(2.15rem, 11vw, 3.4rem);
+  }
+
+  .finale {
+    padding: 68px 14px 84px;
+  }
+
+  .contact-boxes {
+    gap: 12px;
+  }
+
+  .contact-boxes a {
+    min-width: min(100%, 260px);
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    font-size: 1.08rem;
+  }
+
+  .hero {
+    min-height: 790px;
+    background-position: 60% top;
+  }
+
+  .hero-copy {
+    top: 32%;
+    width: calc(100% - 28px);
+    padding: 16px 12px 18px;
+  }
+
+  .ganesha {
+    width: 88px;
+    max-height: 88px;
+  }
+
+  .ganesh-line {
+    margin-block: 5px 9px;
+  }
+
+  .smallcaps {
+    margin-block: 7px;
+    line-height: 1.55;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.2rem, 12vw, 3.15rem);
+  }
+
+  .name-rule {
+    width: 220px;
+    max-width: 88%;
+  }
+
+  .primary {
+    min-height: 43px;
+    padding: 9px 18px;
+    font-size: .68rem;
+  }
+
+  .hl1,
+  .hr2 {
+    opacity: .7;
+  }
+
+  .scroll-prompt {
+    max-width: calc(100vw - 34px);
+    justify-content: center;
+    font-size: .72rem;
+  }
+
+  .scroll-window.open .paper {
+    height: 710px;
+  }
+
+  .paper-content {
+    min-height: 710px;
+    padding: 44px 14px;
+  }
+
+  .scroll-heading {
+    font-size: 1.5rem;
+  }
+
+  .paper-content p {
+    font-size: 1rem;
+  }
+
+  .paper-content h3 {
+    font-size: 1.14rem;
+  }
+
+  .groom-parent {
+    font-size: .98rem !important;
+  }
+
+  .event-card {
+    padding-inline: 14px;
+  }
+
+  .venue {
+    font-size: 1rem;
+  }
+
+  .countdown {
+    gap: 10px;
+  }
+
+  .countdown div {
+    border-width: 1.5px;
+  }
+
+  .music {
+    right: 10px;
+    bottom: 10px;
+    padding: 5px;
+  }
+
+  .music div {
+    display: none;
+  }
+}
+
+@media (max-width: 340px) {
+  .hero-copy h1 {
+    font-size: 2rem;
+  }
+
+  .ganesha {
+    width: 78px;
+  }
+
+  .scroll-window.open .paper {
+    height: 745px;
+  }
+
+  .paper-content {
+    min-height: 745px;
+  }
+
+  .countdown strong {
+    font-size: 1.9rem;
+  }
+
+  .countdown span {
+    font-size: .52rem;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 620px) and (min-width: 700px) {
+  .hero {
+    min-height: 740px;
+  }
+
+  .hero-copy {
+    top: 48%;
+    left: 5%;
+    width: 390px;
+    transform: translateY(-50%);
+  }
+
+  .hero-quote {
+    display: block;
+  }
+}
+
+@media (hover: hover) {
+  .primary:hover,
+  .map-button:hover,
+  .scroll-prompt:hover,
+  .contact-boxes a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.2);
+  }
+}
