@@ -9,11 +9,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=70">
+  <link rel="stylesheet" href="style.css?v=80">
 </head>
 <body class="locked">
   <div id="petalLayer" class="petal-layer" aria-hidden="true"></div>
   <div id="dustLayer" class="dust-layer" aria-hidden="true"></div>
+  <input id="doorToggle" class="door-toggle" type="checkbox" aria-hidden="true">
   <section id="doors" class="doors" aria-label="Open wedding invitation">
     <div class="door door-left"><div class="door-arch"></div></div>
     <div class="door door-right"><div class="door-arch"></div></div>
@@ -27,7 +28,7 @@
         <h1>Tanveer</h1>
       </div>
       <p class="door-date">15 & 16 August 2026</p>
-      <button id="openBtn">Open Invitation</button>
+      <label id="openBtn" for="doorToggle" role="button" tabindex="0">Open Invitation</label>
     </div>
   </section>
 
@@ -181,8 +182,8 @@
   </div>
 
   <audio id="music" loop preload="auto">
-    <source src="assets/music.wav?v=70" type="audio/wav">
+    <source src="assets/music.wav?v=80" type="audio/wav">
   </audio>
-  <script src="script.js?v=70"></script>
+  <script src="script.js?v=80"></script>
 </body>
 </html>

@@ -720,3 +720,83 @@ body.modal-open {
 .invitation-toggle {
   cursor: pointer;
 }
+
+
+/* =====================================================
+   v8 — CSS-ONLY GUARANTEED DOOR OPENING
+   The opening now works even if JavaScript is blocked.
+   ===================================================== */
+
+.door-toggle {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#openBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+#doorToggle:checked + .doors .door-left {
+  transform: translateX(-102%);
+}
+
+#doorToggle:checked + .doors .door-right {
+  transform: translateX(102%);
+}
+
+#doorToggle:checked + .doors .door-content {
+  opacity: 0;
+  transform: scale(.95);
+  pointer-events: none;
+}
+
+#doorToggle:checked + .doors .door-light {
+  opacity: 0;
+}
+
+#doorToggle:checked + .doors {
+  pointer-events: none;
+  animation: hideDoors 0s linear 1.35s forwards;
+}
+
+@keyframes hideDoors {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* Reveal the website underneath as soon as the doors begin opening. */
+#doorToggle:not(:checked) ~ header,
+#doorToggle:not(:checked) ~ main,
+#doorToggle:not(:checked) ~ footer,
+#doorToggle:not(:checked) ~ .music-player {
+  visibility: hidden;
+}
+
+#doorToggle:checked ~ header,
+#doorToggle:checked ~ main,
+#doorToggle:checked ~ footer,
+#doorToggle:checked ~ .music-player {
+  visibility: visible;
+}
+
+#doorToggle:checked ~ main {
+  animation: siteRise .9s cubic-bezier(.2,.7,.2,1) both;
+}
+
+@keyframes siteRise {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

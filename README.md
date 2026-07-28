@@ -1,16 +1,17 @@
-# Cinematic Final v7 — Opening Fixed
+# Cinematic Final v8 — Guaranteed Opening
 
-The previous JavaScript file had accidentally lost the Open Invitation handler
-and referenced undefined particle elements. That is why the button did nothing
-on PC.
+I removed JavaScript as a dependency for the Open Invitation action.
 
-Fixed:
-- Open Invitation now triggers the full split-door animation.
-- The website rises into view after the doors open.
-- Music control works.
-- Read the Invitation modal works.
-- Petals and gold dust work without JavaScript errors.
-- Countdown and navigation remain working.
+The Open Invitation control is now a CSS-powered label connected to a hidden
+checkbox. The doors split and the website appears even when JavaScript is
+blocked, delayed, cached incorrectly, or throws an error.
+
+JavaScript is now used only for optional enhancements:
+- starting music,
+- mobile navigation,
+- countdown,
+- petals and gold dust,
+- modal body-scroll locking.
 
 Replace every repository file and the complete assets folder.
-After GitHub Pages deploys, open the site once with `?v=70`.
+After deployment, open the site once with `?v=80`.
