@@ -1,27 +1,12 @@
-# Bhavini & Tanveer — Final Palace Website v3
+# Bhavini & Tanveer — v4 Responsive Fix
 
-This version keeps the entire v2 website unchanged and adds:
+This version keeps the v3 design unchanged.
 
-- cinematic full-screen split-door opening
-- emerald-and-gold royal doors
-- clear Ganesha artwork on the opening
-- centre light beam
-- petal burst when opening
-- music begins with the opening interaction
-- responsive opening for phones, tablets, laptops and desktops
-- reduced-motion support
+Only responsive visibility was adjusted:
+- groom's parents' names are no longer cropped on PC
+- invitation scroll height adapts for desktop, laptop, tablet and phone
+- text wrapping and bottom spacing are improved
+- split opening and every other section remain unchanged
 
-All existing v2 features remain:
-- responsive palace hero
-- clear Ganesha artwork
-- tap-to-open invitation scroll
-- rolling scroll close animation
-- Reception of Baraat — 15 August
-- Anand Karaj — 16 August
-- live countdown
-- Gautam Family ending
-- floating click-to-call phone boxes
-- music, petals and gold particles
-
-Upload every file and the complete assets folder to your GitHub repository root.
-After deployment, open the website once with `?v=920` or hard refresh.
+Upload all files and the full assets folder.
+After deployment, hard refresh or open once with `?v=930`.

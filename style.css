@@ -901,3 +901,168 @@ body.opening-locked {
     display: none;
   }
 }
+
+
+/* ==========================================================
+   v4 — RESPONSIVE VISIBILITY FIX ONLY
+   Keeps the existing design unchanged.
+   ========================================================== */
+
+/* Prevent the invitation text from being clipped on desktop. */
+.scroll-window {
+  overflow: visible;
+}
+
+.scroll-shell {
+  overflow: visible;
+}
+
+.paper {
+  overflow: hidden;
+}
+
+.paper-content {
+  box-sizing: border-box;
+  min-height: 610px;
+  padding-bottom: 72px;
+}
+
+.groom-parent {
+  display: block;
+  width: min(100%, 760px);
+  margin: 18px auto 0;
+  padding: 14px 10px 0;
+  line-height: 1.45;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Slightly increase open scroll height where wide desktop fonts render taller. */
+@media (min-width: 1100px) {
+  .scroll-window.open .paper {
+    height: 655px;
+  }
+
+  .paper-content {
+    min-height: 655px;
+    padding-top: 52px;
+    padding-bottom: 84px;
+  }
+
+  .couple {
+    margin: 12px 0;
+  }
+
+  .couple strong {
+    font-size: clamp(4.6rem, 7vw, 6rem);
+  }
+
+  .groom-parent {
+    margin-top: 12px;
+    font-size: 1.04rem !important;
+  }
+}
+
+/* Laptop range. */
+@media (min-width: 900px) and (max-width: 1099px) {
+  .scroll-window.open .paper {
+    height: 680px;
+  }
+
+  .paper-content {
+    min-height: 680px;
+    padding-top: 48px;
+    padding-bottom: 88px;
+  }
+
+  .couple strong {
+    font-size: clamp(4.1rem, 7vw, 5.5rem);
+  }
+
+  .groom-parent {
+    font-size: 1rem !important;
+  }
+}
+
+/* Tablet range. */
+@media (min-width: 701px) and (max-width: 899px) {
+  .scroll-window.open .paper {
+    height: 700px;
+  }
+
+  .paper-content {
+    min-height: 700px;
+    padding-top: 46px;
+    padding-bottom: 94px;
+  }
+
+  .couple strong {
+    font-size: clamp(4rem, 9vw, 5.2rem);
+  }
+
+  .groom-parent {
+    font-size: 1rem !important;
+  }
+}
+
+/* Phones. */
+@media (max-width: 700px) {
+  .scroll-window.open .paper {
+    height: 735px;
+  }
+
+  .paper-content {
+    min-height: 735px;
+    padding-top: 44px;
+    padding-bottom: 100px;
+  }
+
+  .groom-parent {
+    width: 100%;
+    margin-top: 14px;
+    padding-inline: 4px;
+    font-size: .96rem !important;
+    line-height: 1.4;
+  }
+}
+
+/* Small phones. */
+@media (max-width: 480px) {
+  .scroll-window.open .paper {
+    height: 770px;
+  }
+
+  .paper-content {
+    min-height: 770px;
+    padding-top: 40px;
+    padding-bottom: 108px;
+  }
+
+  .couple {
+    margin: 12px 0;
+  }
+
+  .couple strong {
+    font-size: clamp(3.25rem, 16vw, 4.8rem);
+  }
+
+  .groom-parent {
+    font-size: .9rem !important;
+  }
+}
+
+/* Very small phones. */
+@media (max-width: 340px) {
+  .scroll-window.open .paper {
+    height: 805px;
+  }
+
+  .paper-content {
+    min-height: 805px;
+    padding-bottom: 116px;
+  }
+
+  .groom-parent {
+    font-size: .86rem !important;
+  }
+}
