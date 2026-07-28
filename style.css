@@ -706,3 +706,17 @@ header{position:sticky;top:0;z-index:100;height:70px;padding:0 max(18px,5vw);dis
 @media(max-width:900px){.hero{background-attachment:scroll}.hero-copy-panel{left:50%;top:28%;width:min(86vw,440px);transform:translate(-50%,-50%)}.hero-copy-panel h2{font-size:clamp(2.55rem,10vw,4.2rem)}.hl-2,.hl-3{display:none}.ganesha-mark{width:80px;height:80px}.event-grid{grid-template-columns:1fr}.clean-event-card{max-width:640px;width:100%;margin:auto}}
 @media(max-width:700px){.hero{min-height:860px;background-position:center top}.hero-copy-panel{top:30%}.hero-open-button{min-height:42px;padding:10px 18px}.event-lantern{width:38px;height:90px}.clean-event-card{min-height:560px}.countdown{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.hero-copy-panel{padding:18px 16px 22px}.hero-family,.hero-invite{font-size:.66rem}.ganesh-line{font-size:.66rem}}
+
+
+/* ==== Royal Ganesha v2 cleanup ==== */
+.hero{background:url("assets/hero-palace-clean.jpg") center center/cover no-repeat !important;background-attachment:fixed}
+.ganesha-mark{width:120px;height:120px;display:block;margin:0 auto 12px;filter:drop-shadow(0 0 16px rgba(220,183,96,.24))}.hero-copy-panel{background:linear-gradient(180deg,rgba(5,24,19,.64),rgba(5,24,19,.52));backdrop-filter:blur(2px);border:1px solid rgba(225,196,121,.22);box-shadow:0 16px 40px rgba(0,0,0,.22)}
+.hero-family{font-size:.74rem}.hero-copy-panel h2{font-size:clamp(3rem,4.6vw,5.2rem)}
+.countdown-section{background:url("assets/countdown-clean.jpg") center center/cover no-repeat !important}
+.clean-countdown-shell{background:linear-gradient(180deg,rgba(4,24,18,.78),rgba(3,18,14,.86));backdrop-filter:blur(6px)}
+.clean-event-card{background:linear-gradient(180deg,#f8efdb 0 38%,#f1e3c6 100%) !important;overflow:hidden}.clean-event-card .event-inner{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.03));border:1px solid rgba(190,145,56,.26)}
+.clean-event-card .event-inner::before,.clean-event-card .event-inner::after{content:"";position:absolute;width:108px;height:108px;background:url("assets/corner-ornament.svg") center/contain no-repeat;opacity:.85;z-index:1}.clean-event-card .event-inner::before{top:10px;left:10px}.clean-event-card .event-inner::after{bottom:10px;right:10px;transform:rotate(180deg)}
+.clean-event-card .event-inner{background-image:url("assets/arch-outline.svg"), linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.03));background-repeat:no-repeat,no-repeat;background-position:center 58%, center;background-size:72% auto, auto}
+.clean-event-card .event-inner > *{position:relative;z-index:2}.clean-event-card h3{max-width:12ch}.clean-event-card .weekday{margin-top:8px}.clean-event-card .event-date{margin-top:4px}.clean-event-card .event-place{max-width:22ch}.event-lantern{top:30px;width:52px;height:120px;opacity:.86}.event-lantern-left{left:10px}.event-lantern-right{right:10px}.event-filigree{opacity:.66}.event-icon{color:var(--gold);font-size:1.25rem;margin-bottom:6px}.map-button{margin-top:16px;padding:10px 18px;min-height:40px;border:1px solid rgba(201,156,57,.5);box-shadow:0 8px 22px rgba(0,0,0,.12)}
+@media(max-width:900px){.ganesha-mark{width:100px;height:100px}.hero{background-attachment:scroll}.clean-event-card .event-inner{background-size:86% auto,auto}}
+@media(max-width:700px){.ganesha-mark{width:88px;height:88px}.clean-event-card .event-inner::before,.clean-event-card .event-inner::after{width:84px;height:84px}.event-lantern{width:40px;height:92px}}

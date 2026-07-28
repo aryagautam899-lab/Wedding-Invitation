@@ -1,14 +1,12 @@
-# Bhavini & Tanveer — Royal Ganesha Final
+# Bhavini & Tanveer — Royal Ganesha v2
 
-This version applies the requested changes:
+This version fixes the remaining issues:
 
-- clean palace-focused hero
-- readable front text moved away from the pillar
-- digital golden Ganesha above “॥ Shree Ganeshaya Namah ॥”
-- straight B & T branding
-- rebuilt event cards with lantern decor and no frozen-petal screenshot look
-- clean countdown with only live countdown numbers
-- original instrumental ambience used as background music
+- clearer digital Ganesha icon
+- removed the Punjabi symbol above Anand Karaj
+- decorated event invitation cards with corner ornaments, arches, lanterns and cleaner styling
+- cleaned hero background so baked-in background text is hidden
+- cleaned countdown background so no random numbers/text appear behind the countdown
 
-Upload all files and the full assets folder to the root of your GitHub repository.
-After uploading, refresh the site once using: ?v=401
+Upload all files and the full assets folder to the root of your GitHub repo and replace the older files.
+After deploying, hard refresh once or open the site with `?v=402`.
