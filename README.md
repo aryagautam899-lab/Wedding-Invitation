@@ -1,16 +1,19 @@
-# Bhavini & Tanveer — Bright Palace Sides Final
+# Bhavini & Tanveer — Correct Final Version
 
-This version keeps the completed website unchanged and adjusts only the hero transparency:
+Built directly from the uploaded project files.
 
-- right side remains bright; no dark overlay panel
-- more of the palace and golden sky are visible
+Fixes:
+- uses the exact uploaded palace image
+- uses the exact uploaded Ganesha image
+- uses the exact uploaded music file
+- removes duplicate/embedded palace styles
+- right side stays bright and transparent
 - left invitation panel is more transparent
-- text shadows preserve readability
-- mobile/tablet readability remains protected
-- split opening, invitation scroll, parents, events, countdown, footer and music are unchanged
+- all existing features are preserved
 
 Deployment:
-1. Replace all repository files with this package.
-2. Upload the complete assets folder.
-3. Confirm `bright-palace-theme-1010.css` is in the repository root.
-4. Open the site with `?v=1010` or hard refresh.
+1. Delete the old repository files.
+2. Upload everything inside this folder to the repository root.
+3. Upload the complete assets folder.
+4. Confirm index.html links to style.css?v=1100.
+5. Open the deployed site with ?v=1100 or hard refresh.
