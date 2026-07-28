@@ -1,14 +1,11 @@
-# Cinematic Final v3
+# Cinematic Final v4
 
-Added:
-- Read the Invitation button opens a centred parchment-scroll modal.
-- Click outside, press ×, or press Escape to close it.
-- Split-door opening remains.
-- Lightweight flower petals return.
-- Lightweight gold dust particles return.
-- Particle counts are capped to protect PC and mobile performance.
-- Compact View Map buttons remain.
-- Anand Karaj, contact numbers, music, countdown and Mughal styling are retained.
+Changes:
+- Removed the duplicate normal invitation page.
+- The invitation now appears only in the parchment-scroll modal.
+- Removed the Invitation item from the navigation menu.
+- Read the Invitation button remains on the main hero section.
+- Split doors, petals, gold dust, music, events, countdown and contacts remain unchanged.
 
 Replace all repository files and the full assets folder with this package.
-Open the deployed site with `?v=30` once to bypass old browser cache.
+Open the deployed site once with `?v=40` to bypass old browser cache.

@@ -649,3 +649,10 @@ body.modal-open {
     transition: none;
   }
 }
+
+
+/* v4: the invitation exists only as the scroll modal */
+.invitation-section,
+#invitation {
+  display: none !important;
+}
