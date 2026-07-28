@@ -1,14 +1,12 @@
-# Split-Door Final Wedding Invitation
+# Corrected Final Wedding Invitation
 
-This version preserves the split-door opening animation and adds:
+This version directly fixes the three reported problems:
 
-- Invitation rising gently after the doors open
-- Refined digital invitation card
-- Groom’s parents shown only as names below Tanveer
-- “Anand Karaj” instead of “Laavaan Phere”
-- Stable event-card typography
-- First contact number: 7986503806
-- No RSVP or attendance section
-- Responsive layout for mobile, tablet and desktop
+- The split-door opening animation works and stays visible for the full animation.
+- The Reception card uses a stable responsive grid, so its title cannot collapse into single letters.
+- Mughal-inspired arches and line-art ornaments are visibly applied to the hero and invitation card.
+- The second ceremony is named Anand Karaj.
+- Groom's parents are written below Tanveer without a heading.
+- No RSVP or attendance form is included.
 
-Upload every file and the assets folder over the existing repository files, then commit.
+Replace every current repository file and the entire assets folder with this package.
