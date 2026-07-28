@@ -656,3 +656,67 @@ body.modal-open {
 #invitation {
   display: none !important;
 }
+
+
+/* v5: stable direct-link and event layout fixes */
+.event-info,
+.date-panel,
+.event-card {
+  min-width: 0;
+}
+
+.event-info h4 {
+  width: 100%;
+  white-space: normal !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}
+
+@media (min-width: 1041px) {
+  .events {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .event-card {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+
+  .event-info {
+    padding: 44px 30px;
+  }
+
+  .event-info h4 {
+    font-size: clamp(2.25rem, 3.2vw, 3.5rem);
+  }
+}
+
+
+/* v6: guaranteed invitation opening using CSS :target */
+.invitation-modal:target,
+.invitation-modal.open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.invitation-modal:target .modal-dialog,
+.invitation-modal.open .modal-dialog {
+  transform: translateY(0) scale(1) !important;
+}
+
+.modal-backdrop {
+  display: block;
+  cursor: default;
+}
+
+.modal-close {
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.invitation-toggle {
+  cursor: pointer;
+}

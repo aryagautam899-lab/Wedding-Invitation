@@ -1,11 +1,12 @@
-# Cinematic Final v4 — Button Fix
+# Cinematic Final v6 — Invitation Modal Guaranteed Fix
 
-Fixed:
-- Read the Invitation button now opens the parchment-scroll modal.
-- × button closes it.
-- Clicking the dark background closes it.
-- Escape key closes it.
-- Split doors, music, petals, gold dust, celebrations, countdown and contacts remain unchanged.
+The Read the Invitation control now uses a CSS `:target` fallback.
 
-Replace all repository files and the full assets folder.
-Open the deployed site once with `?v=41` to bypass the old cached JavaScript.
+That means:
+- It opens on PC even if JavaScript fails or loads late.
+- JavaScript still locks background scrolling and handles Escape.
+- × and clicking the dark background close it.
+- Split doors, music, petals, gold dust, events, countdown and contacts remain.
+
+Replace all repository files and the complete assets folder.
+After deployment, open the website once with `?v=60`.

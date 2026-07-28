@@ -1,3 +1,13 @@
+
+// Always start the invitation from the opening doors, even if the URL contains #events.
+if (window.location.hash) {
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+}
+window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+window.addEventListener("load", () => {
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+});
+
 const doors = document.getElementById("doors");
 const openBtn = document.getElementById("openBtn");
 const music = document.getElementById("music");
@@ -11,96 +21,33 @@ const invitationToggle = document.getElementById("invitationToggle");
 const invitationModal = document.getElementById("invitationModal");
 const closeInvitation = document.getElementById("closeInvitation");
 
-const petalLayer = document.getElementById("petalLayer");
-const dustLayer = document.getElementById("dustLayer");
-
-if (openBtn && doors) {
-  openBtn.addEventListener("click", async () => {
-    doors.classList.add("open");
-    document.body.classList.remove("locked");
-
-    if (site && typeof site.animate === "function") {
-      site.animate(
-        [
-          { opacity: 0, transform: "translateY(34px)" },
-          { opacity: 1, transform: "translateY(0)" }
-        ],
-        { duration: 900, easing: "ease", fill: "both" }
-      );
-    }
-
-    try {
-      if (music) {
-        await music.play();
-        if (musicBtn) musicBtn.textContent = "Ⅱ";
-        if (musicLabel) musicLabel.textContent = "Playing";
-      }
-    } catch {
-      if (musicLabel) musicLabel.textContent = "Tap to play";
-    }
-
-    setTimeout(() => {
-      doors.classList.add("hidden");
-    }, 1350);
-  });
+function syncInvitationModal() {
+  const open = window.location.hash === "#invitationModal";
+  invitationModal?.classList.toggle("open", open);
+  invitationModal?.setAttribute("aria-hidden", String(!open));
+  document.body.classList.toggle("modal-open", open);
 }
 
-if (musicBtn && music) {
-  musicBtn.addEventListener("click", async () => {
-    if (music.paused) {
-      try {
-        await music.play();
-        musicBtn.textContent = "Ⅱ";
-        if (musicLabel) musicLabel.textContent = "Playing";
-      } catch {
-        if (musicLabel) musicLabel.textContent = "Tap again";
-      }
-    } else {
-      music.pause();
-      musicBtn.textContent = "♪";
-      if (musicLabel) musicLabel.textContent = "Paused";
-    }
-  });
-}
-
-if (menuBtn && nav) {
-  menuBtn.addEventListener("click", () => {
-    nav.classList.toggle("open");
-  });
-
-  nav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => nav.classList.remove("open"));
-  });
-}
-
-function openInvitationModal() {
-  if (!invitationModal) return;
-  invitationModal.classList.add("open");
-  invitationModal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("modal-open");
-}
-
-function closeInvitationModal() {
-  if (!invitationModal) return;
-  invitationModal.classList.remove("open");
-  invitationModal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("modal-open");
-}
-
-if (invitationToggle) {
-  invitationToggle.addEventListener("click", openInvitationModal);
-}
-
-if (closeInvitation) {
-  closeInvitation.addEventListener("click", closeInvitationModal);
-}
-
-document.querySelectorAll("[data-close-invitation]").forEach(element => {
-  element.addEventListener("click", closeInvitationModal);
+invitationToggle?.addEventListener("click", () => {
+  requestAnimationFrame(syncInvitationModal);
 });
 
+closeInvitation?.addEventListener("click", () => {
+  document.body.classList.remove("modal-open");
+});
+
+document.querySelectorAll("[data-close-invitation]").forEach(element => {
+  element.addEventListener("click", () => {
+    document.body.classList.remove("modal-open");
+  });
+});
+
+window.addEventListener("hashchange", syncInvitationModal);
+
 document.addEventListener("keydown", event => {
-  if (event.key === "Escape") closeInvitationModal();
+  if (event.key === "Escape" && window.location.hash === "#invitationModal") {
+    window.location.hash = "home";
+  }
 });
 
 const target = new Date("2026-08-15T19:30:00+05:30").getTime();
