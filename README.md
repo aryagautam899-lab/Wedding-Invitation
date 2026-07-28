@@ -1,51 +1,47 @@
-# Bhavini & Tanveer — Wedding Invitation
+# Premium Emerald Royal Wedding Website
 
-A responsive Emerald Royal wedding invitation website built with plain HTML, CSS and JavaScript.
+## Replace the current GitHub files
 
-## Files
+Upload these files to the **root** of the `Wedding-Invitation` repository:
 
-- `index.html` — page content
-- `style.css` — Emerald Royal design
-- `script.js` — countdown, animations, music toggle and WhatsApp RSVP
-- `assets/music.mp3` — add your own music file here
-- `assets/` — add gallery images here
+- `index.html`
+- `style.css`
+- `script.js`
+- `assets/`
 
-## Publish on GitHub Pages
+When GitHub asks whether to replace files with the same names, allow it, then commit the changes.
 
-1. Upload all files and the `assets` folder to your repository.
-2. Open **Settings**.
-3. Select **Pages** from the left sidebar.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select branch **main** and folder **/(root)**.
-6. Click **Save**.
-7. Wait a few minutes for your public link.
+GitHub Pages will automatically redeploy the updated site.
 
-Your link should look similar to:
+## Add photographs
 
-`https://aryagautam899-lab.github.io/Wedding-Invitation/`
+Place four JPG images in the assets folder using these exact names:
 
-## Adding your own photos
+- `photo-1.jpg`
+- `photo-2.jpg`
+- `photo-3.jpg`
+- `photo-4.jpg`
 
-Put images inside the `assets` folder and replace the placeholder blocks in `index.html` with:
+## Add background music
 
-```html
-<img src="assets/photo1.jpg" alt="Bhavini and Tanveer">
-```
+Place an MP3 inside the assets folder using this exact name:
 
-## Adding music
+- `music.mp3`
 
-Rename your selected MP3 file to:
+Music starts only after the guest taps **Open Invitation**, which works with mobile-browser autoplay restrictions.
 
-`music.mp3`
+## RSVP destination
 
-Then place it inside the `assets` folder.
+The WhatsApp RSVP goes to:
 
-## Changing RSVP number
+- `+91 79865 03806`
 
-Open `script.js` and find:
+To change it, open `script.js` and edit:
 
 ```js
 const whatsappNumber = "917986503806";
 ```
 
-Replace it with your preferred WhatsApp number, including country code but without `+`.
+## Website address
+
+`https://aryagautam899-lab.github.io/Wedding-Invitation/`

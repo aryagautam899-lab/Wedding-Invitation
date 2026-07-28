@@ -1,114 +1,156 @@
-const intro = document.getElementById("intro");
-const openInvite = document.getElementById("openInvite");
-const music = document.getElementById("bgMusic");
-const musicToggle = document.getElementById("musicToggle");
-const menuBtn = document.getElementById("menuBtn");
+const body = document.body;
+const preloader = document.getElementById("preloader");
+const gate = document.getElementById("royalGate");
+const openButton = document.getElementById("openInvitation");
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicToggle");
+const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
 
-document.body.classList.add("locked");
-
-openInvite.addEventListener("click", async () => {
-  intro.classList.add("hide");
-  document.body.classList.remove("locked");
-
-  try {
-    if (music.querySelector("source")?.getAttribute("src")) {
-      await music.play();
-      musicToggle.classList.add("playing");
-      musicToggle.textContent = "♫";
-    }
-  } catch {
-    // Browsers may block autoplay if no music file exists or permission is denied.
-  }
-
-  setTimeout(() => intro.remove(), 1100);
+window.addEventListener("load", () => {
+  setTimeout(() => preloader.classList.add("hide"), 650);
 });
 
-musicToggle.addEventListener("click", async () => {
+openButton.addEventListener("click", async () => {
+  gate.classList.add("opened");
+  body.classList.remove("is-locked");
+
+  try {
+    await music.play();
+    musicButton.classList.add("is-playing");
+    musicButton.querySelector(".music-icon").textContent = "♫";
+  } catch {
+    // The website still works without a music file.
+  }
+
+  setTimeout(() => gate.remove(), 1500);
+});
+
+musicButton.addEventListener("click", async () => {
   if (music.paused) {
     try {
       await music.play();
-      musicToggle.classList.add("playing");
-      musicToggle.textContent = "♫";
+      musicButton.classList.add("is-playing");
+      musicButton.querySelector(".music-icon").textContent = "♫";
     } catch {
-      alert("Add your music file as assets/music.mp3 first.");
+      alert("Add your song as assets/music.mp3 first.");
     }
   } else {
     music.pause();
-    musicToggle.classList.remove("playing");
-    musicToggle.textContent = "♪";
+    musicButton.classList.remove("is-playing");
+    musicButton.querySelector(".music-icon").textContent = "♪";
   }
 });
 
-menuBtn.addEventListener("click", () => navMenu.classList.toggle("open"));
+navToggle.addEventListener("click", () => {
+  const isOpen = navMenu.classList.toggle("open");
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+});
 navMenu.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => navMenu.classList.remove("open"));
+  link.addEventListener("click", () => {
+    navMenu.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+  });
 });
 
-const targetDate = new Date("2026-08-15T19:30:00+05:30").getTime();
+const target = new Date("2026-08-15T19:30:00+05:30").getTime();
 
 function updateCountdown() {
-  const now = Date.now();
-  const distance = targetDate - now;
+  const remaining = target - Date.now();
 
-  if (distance <= 0) {
+  if (remaining <= 0) {
     document.getElementById("countdown").innerHTML =
-      "<div style='grid-column:1/-1'><strong>It’s Celebration Time!</strong><span>Welcome</span></div>";
+      '<div class="count-box" style="min-width:min(90vw,620px)"><strong>Welcome</strong><span>It is celebration time</span></div>';
     return;
   }
 
-  const days = Math.floor(distance / 86400000);
-  const hours = Math.floor((distance % 86400000) / 3600000);
-  const minutes = Math.floor((distance % 3600000) / 60000);
-  const seconds = Math.floor((distance % 60000) / 1000);
+  const days = Math.floor(remaining / 86400000);
+  const hours = Math.floor((remaining % 86400000) / 3600000);
+  const minutes = Math.floor((remaining % 3600000) / 60000);
+  const seconds = Math.floor((remaining % 60000) / 1000);
 
   document.getElementById("days").textContent = String(days).padStart(2, "0");
   document.getElementById("hours").textContent = String(hours).padStart(2, "0");
   document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
   document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
 }
-
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("visible");
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
   });
-}, { threshold: 0.14 });
+}, { threshold: 0.13 });
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
 function createPetal() {
   const petal = document.createElement("span");
   petal.className = "petal";
-  petal.style.left = Math.random() * 100 + "vw";
-  petal.style.opacity = (0.25 + Math.random() * 0.55).toFixed(2);
-  petal.style.animationDuration = (7 + Math.random() * 7) + "s";
-  petal.style.setProperty("--drift", ((Math.random() - 0.5) * 180) + "px");
-  document.getElementById("petals").appendChild(petal);
-  setTimeout(() => petal.remove(), 15000);
+  petal.style.left = `${Math.random() * 100}vw`;
+  petal.style.animationDuration = `${8 + Math.random() * 7}s`;
+  petal.style.transform = `scale(${0.55 + Math.random() * 0.9})`;
+  petal.style.setProperty("--drift", `${(Math.random() - 0.5) * 220}px`);
+  document.getElementById("petalLayer").appendChild(petal);
+  setTimeout(() => petal.remove(), 16000);
 }
-
 setInterval(createPetal, 850);
 
-document.getElementById("rsvpForm").addEventListener("submit", (event) => {
+const cursorGlow = document.getElementById("cursorGlow");
+window.addEventListener("pointermove", event => {
+  cursorGlow.style.left = `${event.clientX}px`;
+  cursorGlow.style.top = `${event.clientY}px`;
+});
+
+document.getElementById("rsvpForm").addEventListener("submit", event => {
   event.preventDefault();
 
   const name = document.getElementById("guestName").value.trim();
-  const count = document.getElementById("guestCount").value;
+  const guests = document.getElementById("guestCount").value;
+  const attendance = document.getElementById("attendance").value;
   const eventChoice = document.getElementById("eventChoice").value;
   const message = document.getElementById("guestMessage").value.trim();
 
-  const rsvpText =
-`Wedding RSVP
+  const text =
+`Wedding RSVP — Bhavini & Tanveer
+
 Guest: ${name}
-Number of guests: ${count}
-Attending: ${eventChoice}
+Response: ${attendance}
+Number of guests: ${guests}
+Event(s): ${eventChoice}
 Message: ${message || "No additional message"}`;
 
-  // Replace this number if you want RSVPs to go to a different WhatsApp number.
   const whatsappNumber = "917986503806";
-  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(rsvpText)}`;
-  window.open(url, "_blank", "noopener");
+  window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+});
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const closeLightbox = document.getElementById("closeLightbox");
+
+document.querySelectorAll(".gallery-tile").forEach(tile => {
+  tile.addEventListener("click", () => {
+    const img = tile.querySelector("img");
+    if (!img || img.style.display === "none" || !img.complete || img.naturalWidth === 0) return;
+
+    lightboxImage.src = tile.dataset.image;
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+  });
+});
+
+function closeGallery() {
+  lightbox.classList.remove("open");
+  lightbox.setAttribute("aria-hidden", "true");
+}
+closeLightbox.addEventListener("click", closeGallery);
+lightbox.addEventListener("click", event => {
+  if (event.target === lightbox) closeGallery();
+});
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeGallery();
 });
